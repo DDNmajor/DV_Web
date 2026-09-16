@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gửi lời nhắn tới người thực hiện trang fan Amane Kanata. Form kiểm tra dữ liệu bằng JavaScript.">
+  <meta name="author" content="Lê Quang Huy - 20225333">
+  <title>Liên hệ | Amane Kanata</title>
+  <link rel="icon" href="assets/img/placeholder.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Thông tin sinh viên thực hiện -->
+  <div class="student-bar">
+    <div class="container">
+      <span><strong>Lê Quang Huy</strong> · MSSV 20225333</span>
+      <span class="student-bar__course">Dịch vụ Web · Bài thực hành 1</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Điều hướng chính">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-mark" aria-hidden="true">
+          <svg class="halo" viewBox="0 0 100 100"><path d="M50 2c4 33 13 42 46 46-33 4-42 13-46 46-4-33-13-42-46-46 33-4 42-13 46-46z"/></svg>
+        </span>
+        <span>
+          Amane Kanata
+          <span class="nav__logo-sub">天界学園放送部 Archive</span>
+        </span>
+      </a>
+      <button class="nav__toggle" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="navList">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__list" id="navList">
+        <li class="nav__item"><a class="nav__link" href="index.html">Trang chủ</a></li>
+        <li class="nav__item"><a class="nav__link" href="profile.html">Hồ sơ</a></li>
+        <li class="nav__item"><a class="nav__link" href="gallery.html">Thư viện ảnh</a></li>
+        <li class="nav__item"><a class="nav__link" href="music.html">Âm nhạc</a></li>
+        <li class="nav__item"><a class="nav__link active" href="contact.html">Liên hệ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Kho lưu trữ · 04</span>
+        <h1 class="page-hero__title">Liên hệ</h1>
+        <p class="page-hero__desc">
+          Góp ý về nội dung trang, báo lỗi hiển thị hoặc đơn giản là để lại
+          một lời nhắn cho Heimin đồng môn.
+        </p>
+        <p class="breadcrumb"><a href="index.html">Trang chủ</a> / Liên hệ</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- ===== FORM ===== -->
+          <form class="form reveal" id="contactForm" novalidate>
+            <div class="form__alert form__alert--ok" role="status" aria-live="polite"></div>
+
+            <div class="field">
+              <label for="fullname">Họ và tên <span class="req">*</span></label>
+              <input type="text" id="fullname" name="fullname" placeholder="Nguyễn Văn A" autocomplete="name">
+              <p class="field__error"></p>
+            </div>
+
+            <div class="field">
+              <label for="email">Email <span class="req">*</span></label>
+              <input type="email" id="email" name="email" placeholder="ten@gmail.com" autocomplete="email">
+              <p class="field__error"></p>
+            </div>
+
+            <div class="field">
+              <label for="phone">Số điện thoại</label>
+              <input type="tel" id="phone" name="phone" placeholder="0901234567" autocomplete="tel">
+              <p class="field__error"></p>
+            </div>
+
+            <div class="field">
+              <label for="topic">Chủ đề <span class="req">*</span></label>
+              <select id="topic" name="topic">
+                <option value="">-- Chọn chủ đề --</option>
+                <option value="gopy">Góp ý nội dung</option>
+                <option value="loi">Báo lỗi hiển thị</option>
+                <option value="anh">Đóng góp hình ảnh</option>
+                <option value="khac">Khác</option>
+              </select>
+              <p class="field__error"></p>
+            </div>
+
+            <div class="field">
+              <label for="message">Nội dung <span class="req">*</span></label>
+              <textarea id="message" name="message" maxlength="500"
+                        placeholder="Nhập nội dung tin nhắn (tối thiểu 10 ký tự)..."></textarea>
+              <p class="field__error"></p>
+              <p class="field__hint"><span data-counter>0/500</span></p>
+            </div>
+
+            <button type="submit" class="btn btn--primary">Gửi lời nhắn</button>
+            <button type="reset" class="btn btn--ghost">Nhập lại</button>
+          </form>
+
+          <!-- ===== CỘT PHỤ ===== -->
+          <aside class="contact-side">
+            <div class="card reveal">
+              <h3 class="card__title">Thông tin</h3>
+              <ul class="contact-list">
+                <li><span class="ico" aria-hidden="true">🎓</span> <span>Môn học: Dịch vụ Web</span></li>
+                <li><span class="ico" aria-hidden="true">📁</span> <span>Bài thực hành số 1</span></li>
+                <li><span class="ico" aria-hidden="true">💻</span>
+                  <span><a href="https://github.com/DDNmajor/DV_Web" target="_blank" rel="noopener">Mã nguồn trên GitHub</a></span>
+                </li>
+                <li><span class="ico" aria-hidden="true">🌐</span>
+                  <span><a href="https://ddnmajor.github.io/DV_Web/" target="_blank" rel="noopener">Bản triển khai GitHub Pages</a></span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="card reveal">
+              <h3 class="card__title">Kênh chính thức của Kanata</h3>
+              <ul class="contact-list">
+                <li><span class="ico" aria-hidden="true">▶</span>
+                  <span><a href="https://www.youtube.com/channel/UCZlDXzGoo7d44bwdNObFacg" target="_blank" rel="noopener">YouTube</a></span>
+                </li>
+                <li><span class="ico" aria-hidden="true">𝕏</span>
+                  <span><a href="https://x.com/amanekanatach" target="_blank" rel="noopener">X (Twitter)</a></span>
+                </li>
+                <li><span class="ico" aria-hidden="true">✦</span>
+                  <span><a href="https://hololive.hololivepro.com/" target="_blank" rel="noopener">hololive production</a></span>
+                </li>
+              </ul>
+              <p class="card__text" style="margin-top:12px;">
+                Các đường dẫn lấy từ trang hồ sơ chính thức của hololive production.
+                Hãy theo dõi trực tiếp để ủng hộ.
+              </p>
+            </div>
+
+            <div class="card reveal">
+              <h3 class="card__title">Lưu ý về form</h3>
+              <p class="card__text">
+                Đây là web tĩnh nên form <strong>không gửi dữ liệu tới máy chủ</strong>.
+                Toàn bộ phần kiểm tra dữ liệu được viết bằng JavaScript thuần
+                (<code>assets/js/contact.js</code>); dữ liệu hợp lệ sẽ được in ra
+                Console của trình duyệt để minh hoạ.
+              </p>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Về trang này</h4>
+          <p>
+            Trang lưu niệm tĩnh về Amane Kanata, thực hiện trong khuôn khổ bài thực
+            hành môn Dịch vụ Web. Viết bằng HTML, CSS và JavaScript thuần.
+          </p>
+          <div class="social">
+            <a href="https://www.youtube.com/channel/UCZlDXzGoo7d44bwdNObFacg" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">▶</a>
+            <a href="https://x.com/amanekanatach" target="_blank" rel="noopener" aria-label="X (Twitter)" title="X">𝕏</a>
+            <a href="https://hololive.hololivepro.com/en/talents/amane-kanata/" target="_blank" rel="noopener" aria-label="Hồ sơ hololive" title="hololive">✦</a>
+          </div>
+        </div>
+        <div>
+          <h4>Điều hướng</h4>
+          <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="profile.html">Hồ sơ</a></li>
+            <li><a href="gallery.html">Thư viện ảnh</a></li>
+            <li><a href="music.html">Âm nhạc</a></li>
+            <li><a href="contact.html">Liên hệ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Nguồn tham khảo</h4>
+          <ul>
+            <li><a href="https://hololive.hololivepro.com/en/talents/amane-kanata/" target="_blank" rel="noopener">Hồ sơ chính thức hololive</a></li>
+            <li><a href="https://virtualyoutuber.fandom.com/wiki/Amane_Kanata" target="_blank" rel="noopener">Virtual YouTuber Wiki</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> · <strong>Lê Quang Huy</strong> — MSSV 20225333 · Bài thực hành môn Dịch vụ Web</p>
+        <p class="disclaimer">
+          Trang fan-made phi lợi nhuận, phục vụ mục đích học tập. Không có liên kết
+          chính thức với COVER Corp. hay hololive production. Mọi hình ảnh, tên gọi
+          và nhân vật thuộc bản quyền của chủ sở hữu tương ứng.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" type="button" aria-label="Lên đầu trang">↑</button>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/contact.js"></script>
+</body>
+</html>

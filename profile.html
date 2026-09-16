@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hồ sơ Amane Kanata: bảng thông số, tính cách, dòng thời gian 6 năm, câu thoại quen thuộc và chuyện bên lề.">
+  <meta name="author" content="Lê Quang Huy - 20225333">
+  <title>Hồ sơ | Amane Kanata</title>
+  <link rel="icon" href="assets/img/placeholder.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Thông tin sinh viên thực hiện -->
+  <div class="student-bar">
+    <div class="container">
+      <span><strong>Lê Quang Huy</strong> · MSSV 20225333</span>
+      <span class="student-bar__course">Dịch vụ Web · Bài thực hành 1</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Điều hướng chính">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-mark" aria-hidden="true">
+          <svg class="halo" viewBox="0 0 100 100"><path d="M50 2c4 33 13 42 46 46-33 4-42 13-46 46-4-33-13-42-46-46 33-4 42-13 46-46z"/></svg>
+        </span>
+        <span>
+          Amane Kanata
+          <span class="nav__logo-sub">天界学園放送部 Archive</span>
+        </span>
+      </a>
+      <button class="nav__toggle" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="navList">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__list" id="navList">
+        <li class="nav__item"><a class="nav__link" href="index.html">Trang chủ</a></li>
+        <li class="nav__item"><a class="nav__link active" href="profile.html">Hồ sơ</a></li>
+        <li class="nav__item"><a class="nav__link" href="gallery.html">Thư viện ảnh</a></li>
+        <li class="nav__item"><a class="nav__link" href="music.html">Âm nhạc</a></li>
+        <li class="nav__item"><a class="nav__link" href="contact.html">Liên hệ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Kho lưu trữ · 01</span>
+        <h1 class="page-hero__title">Hồ sơ nhân vật</h1>
+        <p class="page-hero__desc">
+          Bảng thông số, tính cách, dòng thời gian sáu năm hoạt động, những câu thoại
+          quen thuộc và vài chuyện bên lề.
+        </p>
+        <p class="breadcrumb"><a href="index.html">Trang chủ</a> / Hồ sơ</p>
+      </div>
+    </section>
+
+    <!-- ===== THÔNG TIN CƠ BẢN ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="split split--top">
+          <div class="split__media">
+            <img src="https://hololive.hololivepro.com/wp-content/uploads/2024/07/Amane-Kanata_pr-img_05.png"
+                 alt="Amane Kanata — tạo hình toàn thân"
+                 loading="lazy" referrerpolicy="no-referrer">
+          </div>
+
+          <div class="split__body reveal">
+            <span class="eyebrow">Thông số</span>
+            <!--
+              Nguồn: trang hồ sơ chính thức của hololive production
+              https://hololive.hololivepro.com/en/talents/amane-kanata/
+            -->
+            <table class="info-table">
+              <caption>Bảng thông tin cơ bản (theo hồ sơ chính thức hololive)</caption>
+              <tbody>
+                <tr>
+                  <th scope="row">Tên</th>
+                  <td>Amane Kanata (天音かなた)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Công ty</th>
+                  <td>hololive production — COVER Corp.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Thế hệ</th>
+                  <td>Thế hệ 4 (hololive 4th Generation)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Ngày ra mắt</th>
+                  <td>27 / 12 / 2019 (buổi stream đầu tiên)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Ngày tốt nghiệp</th>
+                  <td>27 / 12 / 2025 — tròn 6 năm hoạt động</td>
+                </tr>
+                <tr>
+                  <th scope="row">Sinh nhật</th>
+                  <td>22 / 04</td>
+                </tr>
+                <tr>
+                  <th scope="row">Tuổi (thiết lập)</th>
+                  <td>17 hoặc 20 — hai nguồn ghi khác nhau <a href="#nguon-tuoi">¹</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">Chiều cao</th>
+                  <td>149 cm</td>
+                </tr>
+                <tr>
+                  <th scope="row">Nhóm máu</th>
+                  <td>B</td>
+                </tr>
+                <tr>
+                  <th scope="row">Biểu tượng (oshi mark)</th>
+                  <td>💫 — biểu tượng “dizzy”, chọn vì trông giống vòng hào quang</td>
+                </tr>
+                <tr>
+                  <th scope="row">Thiết kế nhân vật</th>
+                  <td>Oshioshio (おしおしお)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Mô hình Live2D</th>
+                  <td>rariemonn</td>
+                </tr>
+                <tr>
+                  <th scope="row">Mô hình 3D</th>
+                  <td>Yatsurugi (八剣)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Tên fanbase</th>
+                  <td>Hey-min / Heimin (へい民) — nghĩa là “thường dân”</td>
+                </tr>
+                <tr>
+                  <th scope="row">Câu chào</th>
+                  <td>“KonKanataaan!” · “Hey, you all came, ta!”</td>
+                </tr>
+                <tr>
+                  <th scope="row">Linh vật</th>
+                  <td>Upao (kỳ giông axolotl màu xanh) và Kanataso-chan</td>
+                </tr>
+                <tr>
+                  <th scope="row">Hashtag</th>
+                  <td>
+                    #天音かなた (chung) · #天界学園放送部 (stream) ·
+                    #へい民 (fan) · #かなたーと (fan art)
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Thiết lập nhân vật</th>
+                  <td>
+                    Thiên sứ đang theo học tại Thiên Giới Học Viên (天界学園),
+                    chuyên ngành “chữa lành”
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Đại từ xưng hô</th>
+                  <td>“Boku” (僕) — đại từ mang sắc thái nam tính</td>
+                </tr>
+                <tr>
+                  <th scope="row">Kênh</th>
+                  <td>
+                    Kanata Ch. 天音かなた (YouTube) · 天音彼方Official (bilibili) —
+                    một trong số ít kênh hololive được YouTube xác minh
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Thành tích kênh</th>
+                  <td>
+                    1,72 triệu người đăng ký · 2.014 video · hơn 576 triệu lượt xem
+                    (tính tới ngày tốt nghiệp)
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p class="note" id="nguon-tuoi">
+              <strong>¹ Về tuổi:</strong> hololive.wiki ghi <strong>17 tuổi</strong>,
+              còn Virtual YouTuber Wiki ghi <strong>20 tuổi</strong> và cho biết nhân vật
+              ngừng tăng tuổi từ sau năm 2022. Trang hồ sơ chính thức không nêu con số
+              nào, nên ở đây giữ nguyên cả hai thay vì chọn bừa một bên.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TÍNH CÁCH & SỞ THÍCH ===== -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Chân dung</span>
+          <h2 class="section-title">Tính cách &amp; sở thích</h2>
+          <p class="section-sub">
+            Những nét khiến Kanata được yêu mến trong cộng đồng người xem.
+          </p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">😇</div>
+            <h3 class="card__title">Vui vẻ nhưng hướng nội</h3>
+            <p class="card__text">
+              Theo hồ sơ chính thức: rất vui vẻ khi ở cạnh bạn bè thân thiết, nhưng
+              trở nên ít nói và rụt rè giữa đám đông. Ngày nghỉ thì ở nhà.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">🦍</div>
+            <h3 class="card__title">“Gorilla Tenshi”</h3>
+            <p class="card__text">
+              Lực bóp tay đo được <strong>56 kg</strong> — vượt cả mức trung bình
+              của nam giới trưởng thành (36–55 kg). Cô từng làm vỡ nắp hũ, hỏng
+              tay cầm và bàn phím, khiến Coco đặt biệt danh “Kana-Gorilla”.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">🎙️</div>
+            <h3 class="card__title">Quãng giọng rộng</h3>
+            <p class="card__text">
+              Có thể giả giọng trẻ con, giọng nam trầm hay giọng hoạt hình.
+              Cô nhiều lần gọi điện trêu đồng nghiệp bằng giọng người khác mà
+              không ai nhận ra cho tới lúc cúp máy.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">🧠</div>
+            <h3 class="card__title">“BB Tenshi”</h3>
+            <p class="card__text">
+              Đạt điểm tuyệt đối 20/20 trong bài trắc nghiệm kiến thức tổng hợp
+              của Yuzuki Choco — thành tích hiếm, nên fan nói tiếng Anh gọi cô là
+              “Big-Brained Angel”.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">💻</div>
+            <h3 class="card__title">“PP Tenshi”</h3>
+            <p class="card__text">
+              Biệt danh “PowerPoint Angel” ra đời vì cô dùng PowerPoint ngay trong
+              buổi debut. Cũng buổi đó, cô hát <em>Sōran Bushi</em> a cappella —
+              bài sau này thành nhạc hiệu không chính thức của kênh.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">👂</div>
+            <h3 class="card__title">Nghị lực</h3>
+            <p class="card__text">
+              Cô gần như điếc một bên tai vì một chứng bệnh không thể chữa khỏi,
+              nhưng vẫn theo đuổi ca hát tới cùng — điều khiến người hâm mộ
+              nể phục nhất ở cô.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DÒNG THỜI GIAN ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Nhật ký phát sóng</span>
+          <h2 class="section-title">Dòng thời gian</h2>
+          <p class="section-sub">
+            Các cột mốc chính trong 6 năm hoạt động, theo Virtual YouTuber Wiki.
+          </p>
+        </div>
+
+        <div class="timeline reveal">
+          <div class="timeline__item">
+            <p class="timeline__date">THÁNG 11 – 12 / 2019</p>
+            <h3 class="timeline__title">Trước khi lên sóng</h3>
+            <p class="timeline__text">
+              Tài khoản Twitter lập ngày 29/11, kênh YouTube lập ngày 04/12. Tới ngày
+              26/12 — tức trước buổi stream đầu tiên đúng một hôm — kênh đã có
+              10.000 người đăng ký.
+            </p>
+          </div>
+
+          <div class="timeline__item">
+            <p class="timeline__date">27 THÁNG 12 / 2019</p>
+            <h3 class="timeline__title">Buổi stream đầu tiên</h3>
+            <p class="timeline__text">
+              Thế hệ 4 được công bố ngày 25/12; Kanata lên sóng cùng Tokoyami Towa,
+              Tsunomaki Watame, Kiryu Coco và Himemori Luna. Ngay buổi này cô đã dùng
+              PowerPoint — từ đó có biệt danh <strong>PPT (PowerPoint Tenshi)</strong> —
+              và hát <em>Sōran Bushi</em> a cappella.
+            </p>
+          </div>
+
+          <div class="timeline__item">
+            <p class="timeline__date">NỬA ĐẦU 2020</p>
+            <h3 class="timeline__title">Kênh tăng trưởng liên tục</h3>
+            <p class="timeline__text">
+              50.000 người đăng ký ngày 04/01, 100.000 ngày 08/02, 150.000 ngày 18/03,
+              200.000 ngày 27/04 và 250.000 ngày 04/06 trong lúc chơi
+              <em>Minecraft Dungeons</em>. Tính năng hội viên mở ngày 05/05.
+            </p>
+          </div>
+
+          <div class="timeline__item">
+            <p class="timeline__date">5 THÁNG 7 / 2020</p>
+            <h3 class="timeline__title">Ra mắt mô hình 3D</h3>
+            <p class="timeline__text">
+              Người thứ hai trong thế hệ 4 có mô hình 3D, sau Kiryu Coco. Ngay trong
+              buổi stream đó kênh cán mốc 300.000 người đăng ký; tới 02/09 là 400.000.
+            </p>
+          </div>
+
+          <div class="timeline__item">
+            <p class="timeline__date">27 THÁNG 9 / 2020</p>
+            <h3 class="timeline__title">Sân khấu VR đầu tiên</h3>
+            <p class="timeline__text">
+              Tham gia hololive VIRTUAL LIVE tại VARK — <em>Cinderella switch</em> Vol.1,
+              diễn cùng Houshou Marine.
+            </p>
+          </div>
+
+          <div class="timeline__item">
+            <p class="timeline__date">27 THÁNG 7 / 2021</p>
+            <h3 class="timeline__title">Một triệu người đăng ký</h3>
+            <p class="timeline__text">
+              Đạt mốc trong một buổi hát marathon — thành viên hololive thứ 22 và
+              là người thứ ba của thế hệ 4 làm được điều này.
+            </p>
+          </div>
+
+          <div class="timeline__item">
+            <p class="timeline__date">19 THÁNG 8 / 2021</p>
+            <h3 class="timeline__title">Ca khúc gốc đầu tay</h3>
+            <p class="timeline__text">
+              Phát hành <em>Tokusya-Seizon Wonder-la-der!!</em>, mở đầu cho chuỗi
+              sáng tác riêng kéo dài tới tận lúc tốt nghiệp.
+            </p>
+          </div>
+
+          <div class="timeline__item">
+            <p class="timeline__date">2022</p>
+            <h3 class="timeline__title">Gián đoạn vì sức khoẻ</h3>
+            <p class="timeline__text">
+              Mắc COVID-19 vào tháng 2 và phải nghỉ dài hơn dự kiến. Trở lại trọn vẹn
+              từ giữa năm, ra mắt trang phục mới và tổ chức live kỷ niệm 3 năm.
+            </p>
+          </div>
+
+          <div class="timeline__item">
+            <p class="timeline__date">26 THÁNG 6 / 2024</p>
+            <h3 class="timeline__title">1,5 triệu người đăng ký</h3>
+            <p class="timeline__text">
+              Thành viên thứ hai của thế hệ 4 và là người thứ 21 của hololive
+              chạm mốc này.
+            </p>
+          </div>
+
+          <div class="timeline__item">
+            <p class="timeline__date">13 THÁNG 8 / 2025</p>
+            <h3 class="timeline__title">Concert solo đầu tiên “LOCK ON”</h3>
+            <p class="timeline__text">
+              Tổ chức tại Ariake Arena, kèm album thứ hai <em>Trigger</em> phát hành
+              ngày 23/7/2025 — đỉnh cao sự nghiệp âm nhạc của cô.
+            </p>
+          </div>
+
+          <div class="timeline__item">
+            <p class="timeline__date">27 THÁNG 12 / 2025</p>
+            <h3 class="timeline__title">Tốt nghiệp hololive</h3>
+            <p class="timeline__text">
+              Buổi live cuối cùng đúng ngày kỷ niệm 6 năm debut, đạt đỉnh
+              355.500 người xem cùng lúc. Hôm sau cô phát hành ca khúc cuối
+              <em>Dream a dream no one has seen</em>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CÂU THOẠI QUEN THUỘC ===== -->
+    <section class="section section--ink">
+      <div class="container on-ink">
+        <div class="section-head reveal">
+          <span class="eyebrow">Tiếng gọi</span>
+          <h2 class="section-title">Những câu nói đi cùng sáu năm</h2>
+          <p class="section-sub">
+            Mỗi buổi stream của Kanata đều mở và đóng bằng đúng những câu này. Fan đáp
+            lại bằng câu tương ứng — và tên cộng đồng <strong>Hey-min</strong> chính là
+            sinh ra từ đó: “những người hay nói <em class="jp">hei</em>”.
+          </p>
+        </div>
+
+        <div class="grid grid--2">
+          <div class="card card--ink reveal">
+            <span class="eyebrow">Kanata nói</span>
+            <table class="info-table info-table--ink">
+              <tbody>
+                <tr>
+                  <th scope="row">Chào</th>
+                  <td class="jp">へい！</td>
+                </tr>
+                <tr>
+                  <th scope="row">Giới thiệu</th>
+                  <td class="jp">こんかなた~！ホロライブ4期生かなたんこと、天音かなたでーす！</td>
+                </tr>
+                <tr>
+                  <th scope="row">Tạm biệt</th>
+                  <td class="jp">おつかなたー！</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="card card--ink reveal">
+            <span class="eyebrow">Người xem đáp</span>
+            <table class="info-table info-table--ink">
+              <tbody>
+                <tr>
+                  <th scope="row">Chờ stream</th>
+                  <td class="jp">へい！待機💫</td>
+                </tr>
+                <tr>
+                  <th scope="row">Chào</th>
+                  <td class="jp">へい！</td>
+                </tr>
+                <tr>
+                  <th scope="row">Bắt nhịp</th>
+                  <td class="jp">ドッコイショー！ソーラン！</td>
+                </tr>
+                <tr>
+                  <th scope="row">Tạm biệt</th>
+                  <td class="jp">おつかなたー！</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <p class="note">
+          <strong>こんかなた</strong> ghép từ <em class="jp">konnichiwa</em> + Kanata,
+          còn <strong>おつかなた</strong> ghép từ <em class="jp">otsukare</em> + Kanata.
+          Câu <em class="jp">ドッコイショー！ソーラン！</em> là nhịp hò người xem gõ theo
+          khi cô hát <em>Sōran Bushi</em> a cappella lúc mở màn.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== CHUYỆN BÊN LỀ ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Bên lề</span>
+          <h2 class="section-title">Vài chuyện nhỏ về Kanata</h2>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">🐰</div>
+            <h3 class="card__title">Hai con thỏ</h3>
+            <p class="card__text">Cô nuôi hai chú thỏ làm thú cưng.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">📕</div>
+            <h3 class="card__title">Fan của Pop Team Epic</h3>
+            <p class="card__text">
+              Hâm mộ tới mức mời được chính tác giả Bkub vẽ stamp cho kênh membership.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">👗</div>
+            <h3 class="card__title">Gu thời trang</h3>
+            <p class="card__text">
+              Kiryu Coco từng trêu rằng suốt thời gian quen nhau, cô chỉ thấy Kanata
+              mặc đúng hai bộ đồ.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">🏷️</div>
+            <h3 class="card__title">Dở đặt tên</h3>
+            <p class="card__text">
+              Poll đặt tên hội viên của cô chỉ có ba lựa chọn: “Kanatas”, “THE Kanata”
+              và “Kanata Fan Club”.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">🛡️</div>
+            <h3 class="card__title">Moderator Reddit</h3>
+            <p class="card__text">
+              Cô là moderator của subreddit chính thức dành cho hololive.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">🖌️</div>
+            <h3 class="card__title">Chung hoạ sĩ</h3>
+            <p class="card__text">
+              Oshioshio cũng là người thiết kế Sorahoshi Kirame bên Nijisanji.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Về trang này</h4>
+          <p>
+            Trang lưu niệm tĩnh về Amane Kanata, thực hiện trong khuôn khổ bài thực
+            hành môn Dịch vụ Web. Viết bằng HTML, CSS và JavaScript thuần.
+          </p>
+          <div class="social">
+            <a href="https://www.youtube.com/channel/UCZlDXzGoo7d44bwdNObFacg" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">▶</a>
+            <a href="https://x.com/amanekanatach" target="_blank" rel="noopener" aria-label="X (Twitter)" title="X">𝕏</a>
+            <a href="https://hololive.hololivepro.com/en/talents/amane-kanata/" target="_blank" rel="noopener" aria-label="Hồ sơ hololive" title="hololive">✦</a>
+          </div>
+        </div>
+        <div>
+          <h4>Điều hướng</h4>
+          <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="profile.html">Hồ sơ</a></li>
+            <li><a href="gallery.html">Thư viện ảnh</a></li>
+            <li><a href="music.html">Âm nhạc</a></li>
+            <li><a href="contact.html">Liên hệ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Nguồn tham khảo</h4>
+          <ul>
+            <li><a href="https://hololive.hololivepro.com/en/talents/amane-kanata/" target="_blank" rel="noopener">Hồ sơ chính thức hololive</a></li>
+            <li><a href="https://virtualyoutuber.fandom.com/wiki/Amane_Kanata" target="_blank" rel="noopener">Virtual YouTuber Wiki</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> · <strong>Lê Quang Huy</strong> — MSSV 20225333 · Bài thực hành môn Dịch vụ Web</p>
+        <p class="disclaimer">
+          Trang fan-made phi lợi nhuận, phục vụ mục đích học tập. Không có liên kết
+          chính thức với COVER Corp. hay hololive production. Mọi hình ảnh, tên gọi
+          và nhân vật thuộc bản quyền của chủ sở hữu tương ứng.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" type="button" aria-label="Lên đầu trang">↑</button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

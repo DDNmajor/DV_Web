@@ -1,0 +1,178 @@
+/* ============================================================
+   Responsive — Amane Kanata Archive
+   Mốc: 1024px (tablet ngang) · 768px (tablet dọc) · 480px (mobile)
+   ============================================================ */
+
+/* ---------- Tablet ngang: <= 1024px ---------- */
+@media (max-width: 1024px) {
+  .section { padding: 66px 0; }
+
+  .grid--3 { grid-template-columns: repeat(2, 1fr); }
+
+  /* Lệch trục 3 thẻ không còn hợp lý khi lưới chỉ còn 2 cột */
+  .grid--stagger > *:nth-child(2),
+  .grid--stagger > *:nth-child(3) { margin-top: 0; }
+
+  .split { gap: 34px; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+
+  .hero__inner { gap: 20px; }
+  .hero__figure img { max-width: 380px; }
+}
+
+/* ---------- Tablet dọc & mobile: <= 768px ---------- */
+@media (max-width: 768px) {
+  body { font-size: 15px; }
+
+  .section { padding: 52px 0; }
+  .section-head { margin-bottom: 34px; }
+
+  /* Menu hamburger */
+  .nav__toggle { display: block; }
+
+  .nav__list {
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 12px 20px 22px;
+    background: var(--white);
+    border-bottom: 1px solid var(--line);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-145%);
+    transition: transform 0.32s ease;
+  }
+
+  .nav__list.is-open { transform: translateY(0); }
+
+  .nav__link {
+    padding: 13px 16px;
+    border-radius: var(--r-sm);
+    font-size: 1rem;
+  }
+
+  .nav__item + .nav__item { margin-top: 3px; }
+
+  /* Hero xếp dọc: chữ trước, ảnh sau */
+  .hero { padding-top: 46px; }
+
+  .hero__inner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    gap: 0;
+  }
+
+  .hero__body { padding-bottom: 36px; }
+  .hero__figure { justify-self: center; }
+  .hero__figure img { max-width: 300px; }
+  .hero__halo { right: 50%; width: 560px; opacity: 0.7; }
+  .hero::before { right: 0; left: 0; width: 100%; height: 50%; top: auto; bottom: 0; }
+
+  .stat-strip { grid-template-columns: repeat(2, 1fr); }
+
+  .stat-strip__item {
+    border-bottom: 1px solid var(--line-ink);
+    padding: 16px 6px 18px;
+  }
+  .stat-strip__item:nth-child(2n) { border-right: none; }
+  .stat-strip__item:nth-last-child(-n + 2) { border-bottom: none; }
+
+  /* Bố cục */
+  .grid--3,
+  .grid--2 { grid-template-columns: 1fr; }
+
+  .split,
+  .split--top { grid-template-columns: 1fr; gap: 26px; }
+
+  .split__media { max-width: 400px; margin: 0 auto; }
+
+  /* Xếp dọc rồi thì ghim ảnh không còn ý nghĩa */
+  .split--top .split__media { position: static; }
+
+  .gallery { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 11px; }
+  .cover-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }
+  .song-list { grid-template-columns: 1fr; gap: 0; }
+
+  .album {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .album__cover { max-width: 200px; }
+
+  .info-table th { width: 40%; }
+  .info-table th,
+  .info-table td { padding: 11px 13px; font-size: 0.88rem; }
+
+  .form { padding: 22px 18px; }
+
+  .footer-grid { grid-template-columns: 1fr; gap: 26px; }
+
+  /* Lightbox: nút chuyển ảnh xuống đáy cho dễ chạm */
+  .lightbox__btn {
+    top: auto;
+    bottom: 18px;
+    transform: none;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* ---------- Mobile nhỏ: <= 480px ---------- */
+@media (max-width: 480px) {
+  .container { padding: 0 17px; }
+
+  /* Thanh sinh viên: xếp dọc cho khỏi tràn */
+  .student-bar { font-size: 0.68rem; }
+  .student-bar .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .hero__jp { font-size: 2.9rem; }
+  .hero__title { font-size: 0.92rem; letter-spacing: 0.24em; }
+  .hero__actions { flex-direction: column; }
+  .hero__actions .btn { width: 100%; justify-content: center; }
+
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+
+  .track { flex-wrap: wrap; gap: 12px; }
+  .track__time { order: 3; }
+
+  .filter-bar { gap: 6px; }
+  .filter-btn { padding: 7px 14px; font-size: 0.73rem; }
+
+  .to-top { right: 14px; bottom: 14px; }
+}
+
+/* ---------- In ấn ---------- */
+@media print {
+  .site-header,
+  .to-top,
+  .filter-bar,
+  .lightbox,
+  .hero__halo {
+    display: none !important;
+  }
+
+  body { background: #fff; color: #000; }
+
+  .hero,
+  .page-hero,
+  .site-footer,
+  .section--ink {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  .hero__jp,
+  .page-hero__title { color: #000 !important; }
+
+  .card,
+  .form,
+  .track { box-shadow: none; }
+}

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Trang lưu niệm về Amane Kanata — thiên sứ thế hệ 4 của hololive, 2019–2025. Bài thực hành môn Dịch vụ Web.">
+  <meta name="author" content="Lê Quang Huy - 20225333">
+  <title>Amane Kanata | 天界学園放送部 Archive</title>
+  <link rel="icon" href="assets/img/placeholder.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- ===== THÔNG TIN SINH VIÊN ===== -->
+  <div class="student-bar">
+    <div class="container">
+      <span><strong>Lê Quang Huy</strong> · MSSV 20225333</span>
+      <span class="student-bar__course">Dịch vụ Web · Bài thực hành 1</span>
+    </div>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Điều hướng chính">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-mark" aria-hidden="true">
+          <!-- Ngôi sao 4 cánh: hào quang của Kanata, yếu tố chữ ký của cả trang -->
+          <svg class="halo" viewBox="0 0 100 100"><path d="M50 2c4 33 13 42 46 46-33 4-42 13-46 46-4-33-13-42-46-46 33-4 42-13 46-46z"/></svg>
+        </span>
+        <span>
+          Amane Kanata
+          <span class="nav__logo-sub">天界学園放送部 Archive</span>
+        </span>
+      </a>
+
+      <button class="nav__toggle" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="navList">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav__list" id="navList">
+        <li class="nav__item"><a class="nav__link active" href="index.html">Trang chủ</a></li>
+        <li class="nav__item"><a class="nav__link" href="profile.html">Hồ sơ</a></li>
+        <li class="nav__item"><a class="nav__link" href="gallery.html">Thư viện ảnh</a></li>
+        <li class="nav__item"><a class="nav__link" href="music.html">Âm nhạc</a></li>
+        <li class="nav__item"><a class="nav__link" href="contact.html">Liên hệ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero on-ink">
+      <div class="hero__halo" aria-hidden="true">
+        <svg viewBox="0 0 100 100"><path d="M50 2c4 33 13 42 46 46-33 4-42 13-46 46-4-33-13-42-46-46 33-4 42-13 46-46z"/></svg>
+      </div>
+
+      <div class="container">
+        <div class="hero__inner">
+          <div class="hero__body">
+            <span class="hero__badge">Off air · 2019 – 2025</span>
+            <h1 class="hero__jp">天音かなた</h1>
+            <p class="hero__title">Amane Kanata</p>
+            <p class="hero__tagline">
+              Thiên sứ đến từ Thiên Giới Học Viên, thành viên thế hệ 4 của hololive.
+              Cô lên sóng buổi đầu tiên cuối năm 2019 và chào tạm biệt đúng sáu năm
+              sau đó. Trang này ghi lại chặng đường ấy.
+            </p>
+            <div class="hero__actions">
+              <a href="profile.html" class="btn btn--primary">Xem hồ sơ</a>
+              <a href="gallery.html" class="btn btn--ghost">Thư viện ảnh</a>
+            </div>
+          </div>
+
+          <figure class="hero__figure">
+            <img src="https://hololive.hololivepro.com/wp-content/uploads/2024/07/Amane-Kanata_pr-img_01.png"
+                 alt="Amane Kanata trong trang phục Thiên Giới Học Viên"
+                 referrerpolicy="no-referrer" width="460" height="700">
+          </figure>
+        </div>
+      </div>
+
+      <!-- Dải số liệu: đọc như bảng thông số của một đài phát -->
+      <div class="container">
+        <div class="stat-strip">
+          <div class="stat-strip__item">
+            <span class="stat-strip__num">2019.12.27</span>
+            <span class="stat-strip__label">Buổi phát đầu tiên</span>
+          </div>
+          <div class="stat-strip__item">
+            <span class="stat-strip__num">2,014</span>
+            <span class="stat-strip__label">Video đã đăng</span>
+          </div>
+          <div class="stat-strip__item">
+            <span class="stat-strip__num">1.72M</span>
+            <span class="stat-strip__label">Người đăng ký</span>
+          </div>
+          <div class="stat-strip__item">
+            <span class="stat-strip__num">2025.12.27</span>
+            <span class="stat-strip__label">Buổi phát cuối cùng</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ĐIỂM NỔI BẬT ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Hồ sơ nhanh</span>
+          <h2 class="section-title">Ba điều người xem hay nhắc</h2>
+          <blockquote class="lead-quote">
+            <q>Hey, you all came, ta!</q>
+            <cite>Câu chào chính thức · <span class="jp">へい、みんな来たー！</span></cite>
+          </blockquote>
+        </div>
+
+        <div class="grid grid--3 grid--stagger">
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">🎙️</div>
+            <h3 class="card__title">Giọng hát</h3>
+            <p class="card__text">
+              Quãng giọng rộng bậc nhất hololive. Cô hát được cả giọng trẻ con lẫn
+              giọng nam trầm, và từng gọi điện trêu đồng nghiệp bằng giọng người khác
+              mà không ai nhận ra cho tới lúc cúp máy.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">🦍</div>
+            <h3 class="card__title">Sức mạnh</h3>
+            <p class="card__text">
+              Lực bóp tay 56 kg, mạnh hơn mức trung bình của nam giới trưởng thành.
+              Cô làm vỡ hũ thuỷ tinh khi mở nắp và hỏng cả tay cầm lẫn bàn phím,
+              nên được gọi là “Gorilla Tenshi”.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">💙</div>
+            <h3 class="card__title">Hey-min</h3>
+            <p class="card__text">
+              Tên gọi của cộng đồng người hâm mộ, bắt nguồn từ câu chào quen thuộc
+              «へい、みんな来たー！». Suốt sáu năm, họ ở đó tới tận buổi phát cuối cùng.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GIỚI THIỆU ===== -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="split">
+          <div class="split__media reveal">
+            <img src="https://hololive.hololivepro.com/wp-content/uploads/2024/07/Amane-Kanata_pr-img_02.png"
+                 alt="Amane Kanata — tạo hình toàn thân"
+                 loading="lazy" referrerpolicy="no-referrer">
+          </div>
+
+          <div class="split__body reveal">
+            <span class="eyebrow">Giới thiệu</span>
+            <h2 class="section-title">Sáu năm ở lại trần gian</h2>
+            <p>
+              Amane Kanata thuộc thế hệ 4 của hololive, lên sóng buổi đầu tiên ngày
+              <strong>27/12/2019</strong> cùng Tokoyami Towa, Tsunomaki Watame,
+              Kiryu Coco và Himemori Luna. Nhân vật do hoạ sĩ Oshioshio thiết kế.
+            </p>
+            <p>
+              Theo hồ sơ chính thức, cô là một thiên sứ đến từ
+              <em class="jp">天界学園</em> — Thiên Giới Học Viên. Tính cách cũng được
+              ghi rõ ngay trong bio: vui vẻ khi ở cạnh bạn bè thân thiết nhưng trở nên
+              ít nói và rụt rè giữa đám đông, ngày nghỉ thì ở nhà, và luôn nỗ lực với
+              mục tiêu một ngày nào đó được tổ chức concert tại Saitama Super Arena.
+            </p>
+            <p>
+              Đúng sáu năm sau buổi phát đầu tiên, ngày <strong>27/12/2025</strong>,
+              Kanata tốt nghiệp hololive. Buổi live cuối cùng có lúc đạt
+              <strong>355.500</strong> người xem cùng lúc.
+            </p>
+            <a href="profile.html" class="btn btn--primary">Đọc hồ sơ đầy đủ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ĐIỀU HƯỚNG ===== -->
+    <section class="section section--ink">
+      <div class="container on-ink">
+        <div class="section-head reveal">
+          <span class="eyebrow">Kho lưu trữ</span>
+          <h2 class="section-title">Ba chuyên mục còn lại</h2>
+          <p class="section-sub">
+            Toàn bộ nội dung được đối chiếu với hồ sơ chính thức hololive và
+            Virtual YouTuber Wiki.
+          </p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card card--ink reveal">
+            <span class="eyebrow">01 · Hồ sơ</span>
+            <h3 class="card__title">Thông số &amp; dòng thời gian</h3>
+            <p class="card__text">
+              Bảng thông tin đầy đủ, sáu nét tính cách nổi bật, và nhật ký tám cột mốc
+              lớn trải dài sáu năm hoạt động.
+            </p>
+            <a class="card__link" href="profile.html">Mở hồ sơ →</a>
+          </article>
+
+          <article class="card card--ink reveal">
+            <span class="eyebrow">02 · Thư viện</span>
+            <h3 class="card__title">Tạo hình chính thức</h3>
+            <p class="card__text">
+              Bộ ảnh lấy từ trang hồ sơ hololive, có bộ lọc theo nhóm và khung xem
+              phóng to điều khiển bằng bàn phím.
+            </p>
+            <a class="card__link" href="gallery.html">Mở thư viện →</a>
+          </article>
+
+          <article class="card card--ink reveal">
+            <span class="eyebrow">03 · Âm nhạc</span>
+            <h3 class="card__title">Ca khúc, album &amp; video</h3>
+            <p class="card__text">
+              Danh sách ca khúc gốc, album <em>Trigger</em>, ảnh bìa các bản phát hành
+              và 12 video từ kênh chính thức.
+            </p>
+            <a class="card__link" href="music.html">Mở trang nhạc →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Về trang này</h4>
+          <p>
+            Trang lưu niệm tĩnh về Amane Kanata, thực hiện trong khuôn khổ bài thực
+            hành môn Dịch vụ Web. Viết bằng HTML, CSS và JavaScript thuần.
+          </p>
+          <div class="social">
+            <a href="https://www.youtube.com/channel/UCZlDXzGoo7d44bwdNObFacg" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">▶</a>
+            <a href="https://x.com/amanekanatach" target="_blank" rel="noopener" aria-label="X (Twitter)" title="X">𝕏</a>
+            <a href="https://hololive.hololivepro.com/en/talents/amane-kanata/" target="_blank" rel="noopener" aria-label="Hồ sơ hololive" title="hololive">✦</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Điều hướng</h4>
+          <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="profile.html">Hồ sơ</a></li>
+            <li><a href="gallery.html">Thư viện ảnh</a></li>
+            <li><a href="music.html">Âm nhạc</a></li>
+            <li><a href="contact.html">Liên hệ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Nguồn tham khảo</h4>
+          <ul>
+            <li><a href="https://hololive.hololivepro.com/en/talents/amane-kanata/" target="_blank" rel="noopener">Hồ sơ chính thức hololive</a></li>
+            <li><a href="https://virtualyoutuber.fandom.com/wiki/Amane_Kanata" target="_blank" rel="noopener">Virtual YouTuber Wiki</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> · <strong>Lê Quang Huy</strong> — MSSV 20225333 · Bài thực hành môn Dịch vụ Web</p>
+        <p class="disclaimer">
+          Trang fan-made phi lợi nhuận, phục vụ mục đích học tập. Không có liên kết
+          chính thức với COVER Corp. hay hololive production. Mọi hình ảnh, tên gọi
+          và nhân vật thuộc bản quyền của chủ sở hữu tương ứng.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" type="button" aria-label="Lên đầu trang">↑</button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

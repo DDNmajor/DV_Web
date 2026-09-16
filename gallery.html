@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="46 ảnh Amane Kanata: tạo hình chính thức, 12 bộ trang phục, mô hình 3D, artwork và ảnh sự kiện, có bộ lọc và khung xem phóng to.">
+  <meta name="author" content="Lê Quang Huy - 20225333">
+  <title>Thư viện ảnh | Amane Kanata</title>
+  <link rel="icon" href="assets/img/placeholder.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Thông tin sinh viên thực hiện -->
+  <div class="student-bar">
+    <div class="container">
+      <span><strong>Lê Quang Huy</strong> · MSSV 20225333</span>
+      <span class="student-bar__course">Dịch vụ Web · Bài thực hành 1</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Điều hướng chính">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-mark" aria-hidden="true">
+          <svg class="halo" viewBox="0 0 100 100"><path d="M50 2c4 33 13 42 46 46-33 4-42 13-46 46-4-33-13-42-46-46 33-4 42-13 46-46z"/></svg>
+        </span>
+        <span>
+          Amane Kanata
+          <span class="nav__logo-sub">天界学園放送部 Archive</span>
+        </span>
+      </a>
+      <button class="nav__toggle" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="navList">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__list" id="navList">
+        <li class="nav__item"><a class="nav__link" href="index.html">Trang chủ</a></li>
+        <li class="nav__item"><a class="nav__link" href="profile.html">Hồ sơ</a></li>
+        <li class="nav__item"><a class="nav__link active" href="gallery.html">Thư viện ảnh</a></li>
+        <li class="nav__item"><a class="nav__link" href="music.html">Âm nhạc</a></li>
+        <li class="nav__item"><a class="nav__link" href="contact.html">Liên hệ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Kho lưu trữ · 02</span>
+        <h1 class="page-hero__title">Thư viện ảnh</h1>
+        <p class="page-hero__desc">
+          46 ảnh gom từ ba nguồn: tạo hình chính thức của hololive production, artwork
+          trên hololive.wiki, và bộ ảnh trang phục trên Virtual YouTuber Wiki. Bấm vào
+          một ảnh để xem phóng to; dùng phím ← → để chuyển và Esc để đóng.
+        </p>
+        <p class="breadcrumb"><a href="index.html">Trang chủ</a> / Thư viện ảnh</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <!-- Bộ lọc -->
+        <div class="filter-bar" role="group" aria-label="Lọc ảnh theo nhóm">
+          <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">Tất cả</button>
+          <button class="filter-btn" type="button" data-filter="full" aria-pressed="false">Tạo hình chính thức <span class="filter-btn__n">9</span></button>
+          <button class="filter-btn" type="button" data-filter="costume" aria-pressed="false">Trang phục <span class="filter-btn__n">12</span></button>
+          <button class="filter-btn" type="button" data-filter="model3d" aria-pressed="false">Mô hình 3D <span class="filter-btn__n">9</span></button>
+          <button class="filter-btn" type="button" data-filter="event" aria-pressed="false">Sự kiện &amp; dự án <span class="filter-btn__n">8</span></button>
+          <button class="filter-btn" type="button" data-filter="art" aria-pressed="false">Artwork <span class="filter-btn__n">8</span></button>
+        </div>
+
+        <p class="gallery-count">
+          Đang hiển thị <strong class="mono" data-gallery-count>0</strong> / 46 ảnh.
+        </p>
+
+        <!--
+          Ảnh nhúng trực tiếp từ hololive.hololivepro.com và static.wikitide.net
+          (CDN của hololive.wiki) — đã kiểm tra tất cả trả HTTP 200.
+          referrerpolicy="no-referrer" để tránh bị chặn theo Referer.
+          Ảnh wiki dùng đường dẫn /thumb/…/600px- cho nhẹ: bản gốc có file tới 5,7 MB.
+          Nếu không có mạng, main.js tự thay bằng assets/img/placeholder.svg.
+        -->
+        <div class="gallery">
+          <button class="gallery__item" type="button" data-tag="full">
+            <img src="https://hololive.hololivepro.com/wp-content/uploads/2024/07/Amane-Kanata_pr-img_01.png"
+                 alt="Amane Kanata - Tạo hình chính thức - 01" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Tạo hình chính thức · 01</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="full">
+            <img src="https://hololive.hololivepro.com/wp-content/uploads/2024/07/Amane-Kanata_pr-img_02.png"
+                 alt="Amane Kanata - Tạo hình chính thức - 02" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Tạo hình chính thức · 02</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="full">
+            <img src="https://hololive.hololivepro.com/wp-content/uploads/2020/06/Amane-Kanata_pr-img_03.png"
+                 alt="Amane Kanata - Tạo hình chính thức - 03" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Tạo hình chính thức · 03</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="full">
+            <img src="https://hololive.hololivepro.com/wp-content/uploads/2024/07/Amane-Kanata_pr-img_04.png"
+                 alt="Amane Kanata - Tạo hình chính thức - 04" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Tạo hình chính thức · 04</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="full">
+            <img src="https://hololive.hololivepro.com/wp-content/uploads/2024/07/Amane-Kanata_pr-img_05.png"
+                 alt="Amane Kanata - Tạo hình chính thức - 05" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Tạo hình chính thức · 05</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="full">
+            <img src="https://hololive.hololivepro.com/wp-content/uploads/2020/06/Amane-Kanata_pr-img_06.png"
+                 alt="Amane Kanata - Tạo hình chính thức - 06" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Tạo hình chính thức · 06</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="full">
+            <img src="https://hololive.hololivepro.com/wp-content/uploads/2024/07/Amane-Kanata_pr-img_07.png"
+                 alt="Amane Kanata - Tạo hình chính thức - 07" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Tạo hình chính thức · 07</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="full">
+            <img src="https://hololive.hololivepro.com/wp-content/uploads/2024/07/Amane-Kanata_pr-img_08.png"
+                 alt="Amane Kanata - Tạo hình chính thức - 08" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Tạo hình chính thức · 08</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="full">
+            <img src="https://hololive.hololivepro.com/wp-content/uploads/2020/06/Amane-Kanata_pr-img_09.png"
+                 alt="Amane Kanata - Tạo hình chính thức - 09" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Tạo hình chính thức · 09</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="art">
+            <img src="https://static.wikitide.net/hololivewiki/thumb/3/36/Amane_Kanata_-_Portrait_01.png/600px-Amane_Kanata_-_Portrait_01.png"
+                 alt="Amane Kanata - Artwork - 2D 01" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Artwork · 2D 01</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="art">
+            <img src="https://static.wikitide.net/hololivewiki/thumb/3/34/Amane_Kanata_-_Portrait_02.png/600px-Amane_Kanata_-_Portrait_02.png"
+                 alt="Amane Kanata - Artwork - 2D 02" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Artwork · 2D 02</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="art">
+            <img src="https://static.wikitide.net/hololivewiki/thumb/2/2a/Amane_Kanata_-_Portrait_04.png/600px-Amane_Kanata_-_Portrait_04.png"
+                 alt="Amane Kanata - Artwork - 2D 03" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Artwork · 2D 03</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="art">
+            <img src="https://static.wikitide.net/hololivewiki/3/37/Amane_Kanata_-_Portrait_05.png"
+                 alt="Amane Kanata - Artwork - 2D 04" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Artwork · 2D 04</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="art">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/6/6c/Amane_Kanata_-_Portrait.png/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - Chân dung" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Chân dung</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="art">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/0/02/Amane_Kanata_Full_Body.png/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - Toàn thân - vẽ bởi Oshio" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Toàn thân · vẽ bởi Oshio</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="costume">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/c/c9/Amane_Kanata_New_Year_Costume_Concept_Illustration_by_%E3%81%8A%E3%81%97%E3%81%8A.jpg/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - Trang phục năm mới - phác thảo của Oshio" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Trang phục năm mới · phác thảo của Oshio</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="costume">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/9/93/Amane_Kanata_Third_Costume_Pattern_1_by_%E3%81%8A%E3%81%97%E3%81%8A.jpg/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - Trang phục thứ 3 - mẫu 1" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Trang phục thứ 3 · mẫu 1</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="costume">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/1/1d/Amane_Kanata_Third_Costume_Pattern_2_by_%E3%81%8A%E3%81%97%E3%81%8A.jpg/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - Trang phục thứ 3 - mẫu 2" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Trang phục thứ 3 · mẫu 2</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="costume">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/0/0f/Amane_Kanata_Fourth_Costume_Pattern_1_by_%E3%81%8A%E3%81%97%E3%81%8A.jpg/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - Trang phục thứ 4 - mẫu 1 (y tá)" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Trang phục thứ 4 · mẫu 1 (y tá)</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="costume">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/2/2f/Amane_Kanata_Fourth_Costume_Pattern_2_by_%E3%81%8A%E3%81%97%E3%81%8A.jpg/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - Trang phục thứ 4 - mẫu 2" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Trang phục thứ 4 · mẫu 2</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="costume">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/a/af/Amane_Kanata_Fifth_Costume_Pattern_1_by_Oshio.jpg/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - Trang phục thứ 5 - mẫu 1" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Trang phục thứ 5 · mẫu 1</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="costume">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/6/60/Amane_Kanata_Fifth_Costume_Pattern_2_by_Oshio.jpg/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - Trang phục thứ 5 - mẫu 2" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Trang phục thứ 5 · mẫu 2</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="costume">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/1/18/Amane_Kanata_Fifth_Costume_September_2025_Cap.jpg/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - Mũ lưỡi trai - bổ sung 09/2025" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Mũ lưỡi trai · bổ sung 09/2025</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="costume">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/9/90/Amane_Kanata_Sixth_Costume.png/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - Trang phục thứ 6" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Trang phục thứ 6</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="costume">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/2/2c/Amane_Kanata_Sixth_Costume_With_Jacket.jpg/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - Trang phục thứ 6 - kèm áo khoác" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Trang phục thứ 6 · kèm áo khoác</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="costume">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/f/fe/Amane_Kanata_7th_Costume_by_Oshio.jpg/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - Trang phục thứ 7" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Trang phục thứ 7</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="costume">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/0/05/Amane_Kanata_7th_Costume_Alt_by_Oshio.jpg/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - Trang phục thứ 7 - bản thay thế" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Trang phục thứ 7 · bản thay thế</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="model3d">
+            <img src="https://static.wikitide.net/hololivewiki/thumb/c/cd/Amane_Kanata_-_Portrait_3D_01-2.png/600px-Amane_Kanata_-_Portrait_3D_01-2.png"
+                 alt="Amane Kanata - Mô hình 3D - 01" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Mô hình 3D · 01</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="model3d">
+            <img src="https://static.wikitide.net/hololivewiki/thumb/2/25/Amane_Kanata_-_Portrait_3D_01-3.png/600px-Amane_Kanata_-_Portrait_3D_01-3.png"
+                 alt="Amane Kanata - Mô hình 3D - 02" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Mô hình 3D · 02</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="model3d">
+            <img src="https://static.wikitide.net/hololivewiki/thumb/f/f6/Amane_Kanata_-_Portrait_3D_03.png/600px-Amane_Kanata_-_Portrait_3D_03.png"
+                 alt="Amane Kanata - Mô hình 3D - 03" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Mô hình 3D · 03</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="model3d">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/e/ef/Amane_Kanata_3D_Model.png/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - Mô hình 3D - ra mắt 05/07/2020" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Mô hình 3D · ra mắt 05/07/2020</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="model3d">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/4/4f/Amane_Kanata_3D_Model_2.png/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - Mô hình 3D - bản cập nhật" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Mô hình 3D · bản cập nhật</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="model3d">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/5/52/Amane_Kanata_3D_Concept_Art_by_%E3%81%8A%E3%81%97%E3%81%8A.jpg/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - Phác thảo mô hình 3D - Oshio" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Phác thảo mô hình 3D · Oshio</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="model3d">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/3/3f/Amane_Kanata_3rd_Anniversary_3D_Costume.png/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - Trang phục 3D kỷ niệm 3 năm" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Trang phục 3D kỷ niệm 3 năm</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="model3d">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/6/6f/Amane_Kanata_3rd_Anniversary_3D_Costume_by_Oshio.jpg/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - Kỷ niệm 3 năm - bản vẽ của Oshio" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Kỷ niệm 3 năm · bản vẽ của Oshio</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="model3d">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/a/ab/Amane_Kanata_LOCK_ON_3D_Costume_Reference_Sheet_by_Oshio.jpg/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - Bản vẽ kỹ thuật trang phục concert LOCK ON" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Bản vẽ kỹ thuật trang phục concert LOCK ON</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="event">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/e/eb/Amane_Kanata_4th_fes._Concept_Illustration_by_Ordan.jpg/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - hololive 4th fes. - phác thảo của Ordan" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">hololive 4th fes. · phác thảo của Ordan</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="event">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/c/ca/Amane_Kanata_6th_fes._Concept_Illustration_by_Ordan.jpg/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - hololive 6th fes. - phác thảo của Ordan" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">hololive 6th fes. · phác thảo của Ordan</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="event">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/f/f1/Amane_Kanata_hololive_Summer_2023_Swimsuit.jpg/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - hololive Summer 2023 - đồ bơi" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">hololive Summer 2023 · đồ bơi</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="event">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/6/6d/Amane_Kanata_holoWitches_Character.png/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - Magical Girl holoWitches!" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Magical Girl holoWitches!</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="event">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/8/8e/Amane_Kanata_holoWitches_Character_Concept_Illustration.jpg/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - holoWitches! - phác thảo nhân vật" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">holoWitches! · phác thảo nhân vật</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="event">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/c/cf/Amane_Konata_Design_by_Satou_Pote.jpg/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - Amane Konata - nhân vật Cá tháng Tư 2025" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Amane Konata · nhân vật Cá tháng Tư 2025</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="event">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/0/07/Amano_Kanade.jpg/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - Amano Kanade - vai diễn trong hololive ERROR" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Amano Kanade · vai diễn trong hololive ERROR</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="art">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/e/eb/Amane_Kanata_Mascot_Kanataso-chan_Concept_Illustration_1_by_Yananang.png/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - phác thảo linh vật Kanataso-chan 1" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Linh vật Kanataso-chan · phác thảo 1 (Yananang)</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="art">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/b/be/Amane_Kanata_Mascot_Kanataso-chan_Concept_Illustration_2_by_Yananang.jpg/revision/latest/scale-to-width-down/600"
+                 alt="Amane Kanata - phác thảo linh vật Kanataso-chan 2" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Linh vật Kanataso-chan · phác thảo 2 (Yananang)</span>
+          </button>
+
+          <button class="gallery__item" type="button" data-tag="event">
+            <img src="https://static.wikia.nocookie.net/virtualyoutuber/images/5/54/Hololive_all_members_up_to_fifth_gen.jpg/revision/latest/scale-to-width-down/600"
+                 alt="Toàn bộ thành viên hololive tới thế hệ 5" loading="lazy" referrerpolicy="no-referrer">
+            <span class="gallery__caption">Toàn bộ thành viên hololive tới thế hệ 5</span>
+          </button>
+
+        </div>
+
+        <p class="note">
+          Nguồn ảnh: <code>hololive.hololivepro.com</code> (tạo hình chính thức),
+          <code>hololive.wiki</code> (artwork, mô hình 3D) và
+          <code>virtualyoutuber.fandom.com</code> (bộ trang phục, ảnh sự kiện).
+          Phần lớn phác thảo trang phục do chính <strong>Oshio</strong> — hoạ sĩ thiết kế
+          nhân vật — vẽ; mô hình Live2D do <strong>rariemonn</strong> và mô hình 3D do
+          <strong>Yatsurugi (八剣)</strong> dựng. Ảnh hologram 4th/6th fes. do
+          <strong>Ordan</strong> vẽ, linh vật Kanataso-chan do <strong>Yananang</strong> vẽ.
+          Toàn bộ thuộc bản quyền COVER Corp. và các hoạ sĩ;
+          trang này chỉ dùng cho mục đích học tập, phi thương mại.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Khung xem ảnh phóng to -->
+  <div class="lightbox" role="dialog" aria-modal="true" aria-label="Xem ảnh phóng to" aria-hidden="true">
+    <button class="lightbox__close" type="button" aria-label="Đóng">✕</button>
+    <button class="lightbox__btn lightbox__btn--prev" type="button" aria-label="Ảnh trước">‹</button>
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" src="" alt="">
+      <figcaption class="lightbox__cap"></figcaption>
+    </figure>
+    <button class="lightbox__btn lightbox__btn--next" type="button" aria-label="Ảnh sau">›</button>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Về trang này</h4>
+          <p>
+            Trang lưu niệm tĩnh về Amane Kanata, thực hiện trong khuôn khổ bài thực
+            hành môn Dịch vụ Web. Viết bằng HTML, CSS và JavaScript thuần.
+          </p>
+          <div class="social">
+            <a href="https://www.youtube.com/channel/UCZlDXzGoo7d44bwdNObFacg" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">▶</a>
+            <a href="https://x.com/amanekanatach" target="_blank" rel="noopener" aria-label="X (Twitter)" title="X">𝕏</a>
+            <a href="https://hololive.hololivepro.com/en/talents/amane-kanata/" target="_blank" rel="noopener" aria-label="Hồ sơ hololive" title="hololive">✦</a>
+          </div>
+        </div>
+        <div>
+          <h4>Điều hướng</h4>
+          <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="profile.html">Hồ sơ</a></li>
+            <li><a href="gallery.html">Thư viện ảnh</a></li>
+            <li><a href="music.html">Âm nhạc</a></li>
+            <li><a href="contact.html">Liên hệ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Nguồn tham khảo</h4>
+          <ul>
+            <li><a href="https://hololive.hololivepro.com/en/talents/amane-kanata/" target="_blank" rel="noopener">Hồ sơ chính thức hololive</a></li>
+            <li><a href="https://virtualyoutuber.fandom.com/wiki/Amane_Kanata" target="_blank" rel="noopener">Virtual YouTuber Wiki</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> · <strong>Lê Quang Huy</strong> — MSSV 20225333 · Bài thực hành môn Dịch vụ Web</p>
+        <p class="disclaimer">
+          Trang fan-made phi lợi nhuận, phục vụ mục đích học tập. Không có liên kết
+          chính thức với COVER Corp. hay hololive production. Mọi hình ảnh, tên gọi
+          và nhân vật thuộc bản quyền của chủ sở hữu tương ứng.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" type="button" aria-label="Lên đầu trang">↑</button>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/gallery.js"></script>
+</body>
+</html>

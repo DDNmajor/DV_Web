@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800" role="img" aria-label="Ảnh chưa có">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e6fffb"/>
+      <stop offset="100%" stop-color="#f3ecff"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#g)"/>
+  <g fill="none" stroke="#4fd1c5" stroke-width="3" opacity="0.65">
+    <circle cx="300" cy="330" r="62"/>
+    <path d="M238 470c0-34 28-62 62-62s62 28 62 62"/>
+    <path d="M232 292c-34-18-58-6-58-6s16 30 52 34"/>
+    <path d="M368 292c34-18 58-6 58-6s-16 30-52 34"/>
+  </g>
+  <text x="300" y="545" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif"
+        font-size="30" font-weight="600" fill="#7c5cf0">Amane Kanata</text>
+  <text x="300" y="585" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif"
+        font-size="19" fill="#4a5268">Ảnh chưa được thêm</text>
+  <text x="300" y="615" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif"
+        font-size="15" fill="#8a92a8">assets/img/</text>
+</svg>
