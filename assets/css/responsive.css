@@ -108,6 +108,12 @@
   .info-table td { padding: 11px 13px; font-size: 0.88rem; }
 
   .form { padding: 22px 18px; }
+  .fieldset { padding: 18px 15px 4px; }
+
+  /* Bài viết đa phương tiện */
+  .figure-grid { grid-template-columns: 1fr; }
+  .embed--map { padding-top: 80%; }
+  .article__head h1 { font-size: 1.6rem; }
 
   .footer-grid { grid-template-columns: 1fr; gap: 26px; }
 
@@ -146,6 +152,10 @@
   .filter-bar { gap: 6px; }
   .filter-btn { padding: 7px 14px; font-size: 0.73rem; }
 
+  /* Hai nút của form đăng ký xếp dọc cho dễ chạm */
+  .form__actions { flex-direction: column; }
+  .form__actions .btn { width: 100%; justify-content: center; }
+
   .to-top { right: 14px; bottom: 14px; }
 }
 
@@ -155,7 +165,9 @@
   .to-top,
   .filter-bar,
   .lightbox,
-  .hero__halo {
+  .hero__halo,
+  .embed,
+  .media-player {
     display: none !important;
   }
 

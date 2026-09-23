@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Gửi lời nhắn tới người thực hiện trang fan Amane Kanata. Form kiểm tra dữ liệu bằng JavaScript.">
+  <meta name="description" content="Đăng ký nhận bản tin định kỳ từ kho lưu trữ Amane Kanata. Form nhiều loại input, kiểm tra dữ liệu bằng JavaScript.">
   <meta name="author" content="Lê Quang Huy - 20225333">
-  <title>Liên hệ | Amane Kanata</title>
+  <title>Đăng ký nhận tin | Amane Kanata</title>
   <link rel="icon" href="assets/img/placeholder.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,8 +43,8 @@
         <li class="nav__item"><a class="nav__link" href="gallery.html">Thư viện ảnh</a></li>
         <li class="nav__item"><a class="nav__link" href="music.html">Âm nhạc</a></li>
         <li class="nav__item"><a class="nav__link" href="media.html">Đa phương tiện</a></li>
-        <li class="nav__item"><a class="nav__link" href="register.html">Đăng ký</a></li>
-        <li class="nav__item"><a class="nav__link active" href="contact.html">Liên hệ</a></li>
+        <li class="nav__item"><a class="nav__link active" href="register.html">Đăng ký</a></li>
+        <li class="nav__item"><a class="nav__link" href="contact.html">Liên hệ</a></li>
       </ul>
     </nav>
   </header>
@@ -52,113 +52,152 @@
   <main>
     <section class="page-hero">
       <div class="container">
-        <span class="eyebrow">Kho lưu trữ · 04</span>
-        <h1 class="page-hero__title">Liên hệ</h1>
+        <span class="eyebrow">Kho lưu trữ · 06</span>
+        <h1 class="page-hero__title">Đăng ký nhận thông tin</h1>
         <p class="page-hero__desc">
-          Góp ý về nội dung trang, báo lỗi hiển thị hoặc đơn giản là để lại
-          một lời nhắn cho Heimin đồng môn.
+          Điền thông tin bên dưới để nhận bản tin định kỳ về kho lưu trữ.
+          Các trường có dấu * là bắt buộc.
         </p>
-        <p class="breadcrumb"><a href="index.html">Trang chủ</a> / Liên hệ</p>
+        <p class="breadcrumb"><a href="index.html">Trang chủ</a> / Đăng ký</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="contact-grid">
 
-          <!-- ===== FORM ===== -->
-          <form class="form reveal" id="contactForm" novalidate>
-            <div class="form__alert form__alert--ok" role="status" aria-live="polite"></div>
+        <form class="form form--stack reveal" id="registerForm" novalidate>
+          <div class="form__alert form__alert--ok" role="status" aria-live="polite"></div>
+
+          <!-- ===== NHÓM 1: TÀI KHOẢN ===== -->
+          <fieldset class="fieldset">
+            <legend>Thông tin tài khoản</legend>
 
             <div class="field">
               <label for="fullname">Họ và tên <span class="req">*</span></label>
-              <input type="text" id="fullname" name="fullname" placeholder="Nguyễn Văn A" autocomplete="name">
+              <input type="text" id="fullname" name="fullname" placeholder="Nguyễn Văn A"
+                     autocomplete="name" required minlength="3">
               <p class="field__error"></p>
             </div>
 
             <div class="field">
               <label for="email">Email <span class="req">*</span></label>
-              <input type="email" id="email" name="email" placeholder="ten@gmail.com" autocomplete="email">
+              <input type="email" id="email" name="email" placeholder="ban@example.com"
+                     autocomplete="email" required>
               <p class="field__error"></p>
             </div>
 
             <div class="field">
-              <label for="phone">Số điện thoại</label>
-              <input type="tel" id="phone" name="phone" placeholder="0901234567" autocomplete="tel">
+              <label for="password">Mật khẩu <span class="req">*</span> (tối thiểu 8 ký tự)</label>
+              <input type="password" id="password" name="password"
+                     autocomplete="new-password" required minlength="8">
               <p class="field__error"></p>
             </div>
 
             <div class="field">
-              <label for="topic">Chủ đề <span class="req">*</span></label>
-              <select id="topic" name="topic">
-                <option value="">-- Chọn chủ đề --</option>
-                <option value="gopy">Góp ý nội dung</option>
-                <option value="loi">Báo lỗi hiển thị</option>
-                <option value="anh">Đóng góp hình ảnh</option>
-                <option value="khac">Khác</option>
+              <label for="phone">Số điện thoại <span class="req">*</span> (10 số, bắt đầu bằng 0)</label>
+              <input type="tel" id="phone" name="phone" placeholder="0901234567"
+                     autocomplete="tel" required pattern="0[0-9]{9}">
+              <p class="field__error"></p>
+            </div>
+          </fieldset>
+
+          <!-- ===== NHÓM 2: CÁ NHÂN ===== -->
+          <fieldset class="fieldset">
+            <legend>Thông tin cá nhân</legend>
+
+            <div class="field">
+              <label for="birthdate">Ngày sinh <span class="req">*</span></label>
+              <input type="date" id="birthdate" name="birthdate" required>
+              <p class="field__error"></p>
+            </div>
+
+            <div class="field">
+              <label for="age">Độ tuổi <span class="req">*</span></label>
+              <input type="number" id="age" name="age" min="1" max="120" required>
+              <p class="field__error"></p>
+            </div>
+
+            <!-- Nhóm radio: dùng fieldset lồng để <legend> thay cho <label> -->
+            <fieldset class="field">
+              <legend>Giới tính <span class="req">*</span></legend>
+              <div class="choice-group">
+                <label class="choice">
+                  <input type="radio" name="gender" value="nam"> Nam
+                </label>
+                <label class="choice">
+                  <input type="radio" name="gender" value="nu"> Nữ
+                </label>
+                <label class="choice">
+                  <input type="radio" name="gender" value="khac"> Khác
+                </label>
+              </div>
+              <p class="field__error"></p>
+            </fieldset>
+          </fieldset>
+
+          <!-- ===== NHÓM 3: TUỲ CHỌN NHẬN TIN ===== -->
+          <fieldset class="fieldset">
+            <legend>Tuỳ chọn nhận tin</legend>
+
+            <fieldset class="field">
+              <legend>Chủ đề quan tâm</legend>
+              <div class="choice-group">
+                <label class="choice">
+                  <input type="checkbox" name="topics" value="tin-tuc"> Tin tức
+                </label>
+                <label class="choice">
+                  <input type="checkbox" name="topics" value="am-nhac"> Âm nhạc
+                </label>
+                <label class="choice">
+                  <input type="checkbox" name="topics" value="su-kien"> Sự kiện
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="field">
+              <label for="region">Khu vực <span class="req">*</span></label>
+              <select id="region" name="region" required>
+                <option value="">-- Chọn khu vực --</option>
+                <option value="mien-bac">Miền Bắc</option>
+                <option value="mien-trung">Miền Trung</option>
+                <option value="mien-nam">Miền Nam</option>
+                <option value="nuoc-ngoai">Ngoài Việt Nam</option>
               </select>
               <p class="field__error"></p>
             </div>
 
             <div class="field">
-              <label for="message">Nội dung <span class="req">*</span></label>
+              <label for="message">Lời nhắn</label>
               <textarea id="message" name="message" maxlength="500"
-                        placeholder="Nhập nội dung tin nhắn (tối thiểu 10 ký tự)..."></textarea>
+                        placeholder="Bạn muốn nhận nội dung gì?"></textarea>
               <p class="field__error"></p>
               <p class="field__hint"><span data-counter>0/500</span></p>
             </div>
 
-            <button type="submit" class="btn btn--primary">Gửi lời nhắn</button>
+            <div class="field">
+              <label class="choice">
+                <input type="checkbox" id="agree" name="agree" required>
+                Tôi đồng ý với điều khoản sử dụng <span class="req">*</span>
+              </label>
+              <p class="field__error"></p>
+            </div>
+          </fieldset>
+
+          <div class="form__actions">
+            <button type="submit" class="btn btn--primary">Đăng ký</button>
             <button type="reset" class="btn btn--ghost">Nhập lại</button>
-          </form>
+          </div>
+        </form>
 
-          <!-- ===== CỘT PHỤ ===== -->
-          <aside class="contact-side">
-            <div class="card reveal">
-              <h3 class="card__title">Thông tin</h3>
-              <ul class="contact-list">
-                <li><span class="ico" aria-hidden="true">🎓</span> <span>Môn học: Dịch vụ Web</span></li>
-                <li><span class="ico" aria-hidden="true">📁</span> <span>Bài thực hành số 1</span></li>
-                <li><span class="ico" aria-hidden="true">💻</span>
-                  <span><a href="https://github.com/DDNmajor/DV_Web" target="_blank" rel="noopener">Mã nguồn trên GitHub</a></span>
-                </li>
-                <li><span class="ico" aria-hidden="true">🌐</span>
-                  <span><a href="https://ddnmajor.github.io/DV_Web/" target="_blank" rel="noopener">Bản triển khai GitHub Pages</a></span>
-                </li>
-              </ul>
-            </div>
+        <aside class="note">
+          <p>
+            Đây là web tĩnh nên form <strong>không gửi dữ liệu tới máy chủ</strong>.
+            Toàn bộ phần kiểm tra dữ liệu được viết bằng JavaScript thuần
+            (<code>assets/js/register.js</code>); dữ liệu hợp lệ sẽ được in ra
+            Console của trình duyệt để minh hoạ.
+          </p>
+        </aside>
 
-            <div class="card reveal">
-              <h3 class="card__title">Kênh chính thức của Kanata</h3>
-              <ul class="contact-list">
-                <li><span class="ico" aria-hidden="true">▶</span>
-                  <span><a href="https://www.youtube.com/channel/UCZlDXzGoo7d44bwdNObFacg" target="_blank" rel="noopener">YouTube</a></span>
-                </li>
-                <li><span class="ico" aria-hidden="true">𝕏</span>
-                  <span><a href="https://x.com/amanekanatach" target="_blank" rel="noopener">X (Twitter)</a></span>
-                </li>
-                <li><span class="ico" aria-hidden="true">✦</span>
-                  <span><a href="https://hololive.hololivepro.com/" target="_blank" rel="noopener">hololive production</a></span>
-                </li>
-              </ul>
-              <p class="card__text" style="margin-top:12px;">
-                Các đường dẫn lấy từ trang hồ sơ chính thức của hololive production.
-                Hãy theo dõi trực tiếp để ủng hộ.
-              </p>
-            </div>
-
-            <div class="card reveal">
-              <h3 class="card__title">Lưu ý về form</h3>
-              <p class="card__text">
-                Đây là web tĩnh nên form <strong>không gửi dữ liệu tới máy chủ</strong>.
-                Toàn bộ phần kiểm tra dữ liệu được viết bằng JavaScript thuần
-                (<code>assets/js/contact.js</code>); dữ liệu hợp lệ sẽ được in ra
-                Console của trình duyệt để minh hoạ.
-              </p>
-            </div>
-          </aside>
-
-        </div>
       </div>
     </section>
   </main>
@@ -213,6 +252,6 @@
   <button class="to-top" type="button" aria-label="Lên đầu trang">↑</button>
 
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/contact.js"></script>
+  <script src="assets/js/register.js"></script>
 </body>
 </html>

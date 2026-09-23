@@ -575,6 +575,10 @@ a:hover { color: var(--cobalt); }
 .grid--3 { grid-template-columns: repeat(3, 1fr); }
 .grid--2 { grid-template-columns: repeat(2, 1fr); }
 
+/* Khi lưới là <ul> (index_new.html), <li> chỉ là lớp trung gian:
+   cho nó display:grid để thẻ con cao bằng ô lưới, không so le */
+.grid > li { display: grid; }
+
 .card {
   background: var(--white);
   border: 1px solid var(--line);
@@ -1236,6 +1240,22 @@ ol.song-list li::before {
   border: none;
 }
 
+/* Bản đồ cần cao hơn tỉ lệ 16:9 mới đọc được tên đường */
+.embed--map { padding-top: 62%; }
+
+/* Trình phát video/audio gốc của trình duyệt */
+.media-player {
+  display: block;
+  width: 100%;
+  border-radius: var(--r-md);
+  background: var(--ink);
+}
+
+audio.media-player {
+  border-radius: var(--r-sm);
+  background: transparent;
+}
+
 /* ---------- 13. Ghi chú ---------- */
 .note {
   margin-top: 22px;
@@ -1358,6 +1378,79 @@ code {
   color: var(--cobalt-deep);
 }
 
+/* ---------- 14b. Form đăng ký: fieldset, radio, checkbox ---------- */
+
+/* Form một cột (register.html), khác .contact-grid hai cột của trang Liên hệ */
+.form--stack { max-width: 760px; }
+
+.fieldset {
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 22px 24px 6px;
+  margin-bottom: 24px;
+}
+
+.fieldset legend {
+  padding: 0 9px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--cobalt-deep);
+}
+
+/* Nhóm radio/checkbox bọc trong <fieldset class="field"> để dùng <legend>
+   thay cho <label>. Reset viền mặc định của trình duyệt — bộ reset * ở đầu
+   file chỉ xoá margin/padding, không xoá border. */
+fieldset.field {
+  border: none;
+  padding: 0;
+  min-inline-size: 0;
+}
+
+fieldset.field > legend {
+  margin-bottom: 7px;
+  padding: 0;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--text);
+}
+
+.choice-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 22px;
+}
+
+/* Viết kèm .field .choice vì .field label ở mục 14 có độ đặc hiệu 0,1,1,
+   cao hơn .choice (0,1,0) nên sẽ ép nhãn thành display:block và in đậm */
+.choice,
+.field .choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0;
+  font-size: 0.93rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Bắt buộc: .field input ở mục 14 đặt width 100%, không gỡ thì
+   radio/checkbox giãn hết chiều ngang và vỡ bố cục */
+.field .choice input {
+  width: auto;
+  flex: none;
+  margin: 0;
+  padding: 0;
+  accent-color: var(--cobalt);
+  cursor: pointer;
+}
+
+.form__actions {
+  display: flex;
+  gap: 10px;
+}
+
 .contact-side .card + .card { margin-top: 18px; }
 
 .contact-list li {
@@ -1434,6 +1527,11 @@ code {
   line-height: 1.7;
 }
 
+/* index_new.html bọc dòng copyright trong <small> cho đúng ngữ nghĩa.
+   Mặc định <small> là font-size: smaller nên chữ sẽ co lại so với bản gốc —
+   trả về inherit để hai trang hiển thị giống hệt nhau. */
+.footer-bottom small { font-size: inherit; }
+
 /* ---------- 16. Back to top ---------- */
 .to-top {
   position: fixed;
@@ -1473,3 +1571,77 @@ code {
   html { scroll-behavior: auto; }
   * { transition-duration: 0.01ms !important; }
 }
+
+/* ---------- 18. Bài viết đa phương tiện (media.html) ---------- */
+.article { max-width: 78ch; }
+
+.article__head {
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--line);
+}
+
+.article__head h1 {
+  font-size: 2rem;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+/* Dòng ngày tháng + tác giả, cùng phong cách với .timeline__date */
+.article__meta {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--text-soft);
+}
+
+.article__meta address {
+  display: inline;
+  font-style: normal;
+}
+
+.article > section + section { margin-top: 40px; }
+
+.article h2 {
+  font-size: 1.22rem;
+  margin-bottom: 14px;
+}
+
+.article p + p { margin-top: 14px; }
+
+.article mark {
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: rgba(242, 193, 78, 0.34);
+  color: inherit;
+}
+
+.article__foot {
+  margin-top: 40px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  font-size: 0.89rem;
+  color: var(--text-soft);
+}
+
+.figure { margin: 22px 0; }
+
+.figure img {
+  width: 100%;
+  border-radius: var(--r-md);
+}
+
+.figure figcaption {
+  margin-top: 9px;
+  text-align: center;
+  font-size: 0.84rem;
+  color: var(--text-soft);
+}
+
+.figure-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.figure-grid .figure { margin: 0; }

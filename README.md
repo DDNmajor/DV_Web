@@ -20,7 +20,11 @@ DV_Web/
 ├── profile.html        Bảng thông số, 6 thẻ tính cách, timeline 11 mốc, câu thoại, bên lề
 ├── gallery.html        46 ảnh từ 3 nguồn + bộ lọc 5 nhóm + lightbox
 ├── music.html          18 ca khúc gốc, 2 album, ~150 bài cover/nhóm, nhạc nền stream
+├── media.html          Bài viết đa phương tiện: video, audio, iframe YouTube, bản đồ
+├── register.html       Form đăng ký 10 trường, 3 fieldset, kiểm tra bằng JavaScript
 ├── contact.html        Form 5 trường, kiểm tra dữ liệu bằng JavaScript
+├── index_new.html      Bản refactor của index.html sang thẻ semantic HTML5
+├── prompt-refactor.md  Prompt đã dùng để sinh index_new.html + giải trình
 ├── assets/
 │   ├── css/
 │   │   ├── style.css       Token màu/chữ, reset, toàn bộ component
@@ -29,11 +33,18 @@ DV_Web/
 │   │   ├── main.js         Hamburger, reveal khi cuộn, back-to-top, năm, fallback ảnh
 │   │   ├── gallery.js      Lọc theo data-tag + lightbox (← → Esc)
 │   │   ├── music.js        Trình phát mô phỏng bằng setInterval
-│   │   └── contact.js      Kiểm tra dữ liệu form
-│   └── img/
-│       ├── README.md       Giải thích chuyện nhúng ảnh từ ngoài
-│       └── placeholder.svg Ảnh dự phòng khi tải lỗi
+│   │   ├── contact.js      Kiểm tra dữ liệu form liên hệ
+│   │   └── register.js     Kiểm tra dữ liệu form đăng ký (có radio + checkbox)
+│   ├── img/
+│   │   ├── README.md       Giải thích chuyện nhúng ảnh từ ngoài
+│   │   └── placeholder.svg Ảnh dự phòng khi tải lỗi
+│   └── media/
+│       ├── README.md       Nguồn, giấy phép, và vì sao tải về thay vì nhúng URL
+│       ├── demo-video.mp4  File mẫu CC0 cho thẻ <video>
+│       ├── demo-video.webm File mẫu CC0 (bản nhẹ hơn, trình duyệt tự chọn)
+│       └── demo-audio.mp3  File mẫu CC0 cho thẻ <audio>
 ├── .nojekyll           Yêu cầu GitHub Pages phục vụ file tĩnh nguyên trạng
+├── CNAME               Tên miền riêng zephyr224.id.vn
 └── README.md
 ```
 
@@ -70,8 +81,13 @@ tiêu đề section cũng cố tình lệch trục và hàng thẻ nổi bật l
 ## 3. Kỹ thuật đã sử dụng
 
 **HTML5 ngữ nghĩa** — `header`, `nav`, `main`, `section`, `article`, `aside`,
-`figure`/`figcaption`, `table` có `caption`/`scope`, form nhiều loại input,
-`iframe`, `data-*`, meta SEO, thuộc tính ARIA.
+`figure`/`figcaption`, `time`, `address`, `mark`, `small`, `fieldset`/`legend`,
+`table` có `caption`/`scope`, form nhiều loại input, `data-*`, meta SEO,
+thuộc tính ARIA (`aria-labelledby`, `aria-live`, `aria-invalid`).
+
+**Đa phương tiện** — thẻ `<video>` với hai `<source>` (WebM + MP4) và `poster`,
+thẻ `<audio>`, `<iframe>` nhúng YouTube và bản đồ OpenStreetMap. Chi tiết và các
+bẫy hay gặp: [assets/media/README.md](assets/media/README.md).
 
 **CSS** — biến CSS (`:root`), Flexbox, Grid, `position: sticky`, `aspect-ratio`,
 `clip-path` (ngôi sao 4 cánh), `backdrop-filter`, `@keyframes`, `:focus-visible`,
