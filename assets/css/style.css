@@ -1419,29 +1419,50 @@ fieldset.field > legend {
 .choice-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px 22px;
+  gap: 12px 24px;
+  padding: 2px 0;
 }
 
-/* Viết kèm .field .choice vì .field label ở mục 14 có độ đặc hiệu 0,1,1,
-   cao hơn .choice (0,1,0) nên sẽ ép nhãn thành display:block và in đậm */
+/* Hai trường ngắn đứng cạnh nhau cho form đỡ dài */
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 18px;
+}
+
+/* Ô đồng ý điều khoản: tách khỏi nhóm trên bằng một đường kẻ */
+.field--agree {
+  margin-top: 4px;
+  padding-top: 17px;
+  border-top: 1px solid var(--line);
+}
+
+/* Mục 14 có .field label (0,1,1) và .field input (0,1,1) ép nhãn thành
+   display:block và ô nhập rộng 100%. Với radio/checkbox thì cả hai đều sai.
+   Dùng label.choice (0,2,1) và input[type=...] (0,3,1) để chắc chắn thắng,
+   không phụ thuộc vào thứ tự khai báo trong file. */
 .choice,
-.field .choice {
+.field label.choice {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   margin-bottom: 0;
   font-size: 0.93rem;
   font-weight: 500;
+  line-height: 1.4;
   cursor: pointer;
 }
 
-/* Bắt buộc: .field input ở mục 14 đặt width 100%, không gỡ thì
-   radio/checkbox giãn hết chiều ngang và vỡ bố cục */
-.field .choice input {
+.field .choice input[type="checkbox"],
+.field .choice input[type="radio"] {
   width: auto;
+  min-width: 0;
+  height: auto;
   flex: none;
   margin: 0;
   padding: 0;
+  border: none;
+  background: none;
   accent-color: var(--cobalt);
   cursor: pointer;
 }
