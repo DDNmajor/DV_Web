@@ -1,0 +1,492 @@
+/* ============================================================
+   Bài tập 4 — Xây dựng CSS cho trang-goc.html (không sửa HTML)
+   Dùng lại hệ CSS của site chính: assets/css/style.css + responsive.css
+   (token màu, font, reset, footer...). File này chỉ "nối" các class
+   của trang-goc.html vào ngôn ngữ thiết kế sẵn có.
+   ============================================================ */
+
+/* @import phải đứng đầu file */
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&family=Zen+Maru+Gothic:wght@500;700&display=swap");
+@import url("../css/style.css");
+@import url("../css/responsive.css");
+
+/* ---------- 1. Header ----------
+   .site-header của site chính cao cố định var(--header-h) và chỉ chứa .nav.
+   Ở đây header chứa tên trang + tagline + nav nên phải bỏ chiều cao cố định. */
+.site-header {
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 14px;
+  padding: 12px max(24px, calc((100% - var(--maxw)) / 2 + 24px));
+}
+
+.site-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 1.12rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.site-name:hover { color: var(--text); }
+
+/* Ngôi sao 4 cánh — chữ ký của site, thay cho .nav__logo-mark */
+.site-name::before {
+  content: "";
+  width: 26px;
+  height: 26px;
+  background: var(--halo);
+  clip-path: polygon(
+    50% 0%, 60% 40%, 100% 50%, 60% 60%,
+    50% 100%, 40% 60%, 0% 50%, 40% 40%
+  );
+}
+
+.tagline {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.main-nav { margin-left: auto; }
+
+.main-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* Giống .nav__link */
+.main-nav a {
+  display: block;
+  padding: 8px 15px;
+  border-radius: 999px;
+  font-size: 0.91rem;
+  font-weight: 600;
+  color: var(--text-soft);
+}
+
+.main-nav a:hover {
+  background: rgba(43, 92, 230, 0.08);
+  color: var(--cobalt-deep);
+}
+
+/* ---------- 2. Bố cục main + sidebar ---------- */
+.layout {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 56px 24px 88px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 40px;
+  align-items: start;
+}
+
+main > article,
+main > section {
+  padding-bottom: 56px;
+  margin-bottom: 56px;
+  border-bottom: 1px solid var(--line);
+}
+
+main > section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* h1/h2 trong main mượn kiểu .section-title (gạch chân lệch trục) */
+main h1,
+main h2 {
+  position: relative;
+  padding-bottom: 16px;
+  margin-bottom: 28px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+main h1 { font-size: clamp(1.9rem, 5vw, 2.9rem); }
+main h2 { font-size: clamp(1.5rem, 3.4vw, 2.1rem); }
+
+main h1::after,
+main h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 78px;
+  height: 3px;
+  background: var(--cobalt);
+}
+
+main h1::before,
+main h2::before {
+  content: "";
+  position: absolute;
+  left: 86px;
+  bottom: 0;
+  width: 22px;
+  height: 3px;
+  background: var(--halo);
+}
+
+main h3 {
+  font-size: 1.12rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin-bottom: 9px;
+}
+
+main p + p { margin-top: 15px; }
+
+main strong { color: var(--cobalt-deep); }
+
+/* ---------- 3. Giới thiệu: ảnh giống .split__media ---------- */
+#gioi-thieu figure {
+  position: relative;
+  margin-bottom: 28px;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: linear-gradient(165deg, var(--ink) 0%, var(--cobalt-deep) 100%);
+  box-shadow: var(--shadow-md);
+}
+
+#gioi-thieu figure img {
+  width: 100%;
+  height: auto;
+}
+
+#gioi-thieu figcaption {
+  padding: 12px 18px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  color: var(--text-on-ink);
+}
+
+/* ---------- 4. Giá trị cốt lõi: .card + lưới lệch trục ---------- */
+.value-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.value-card {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 28px 26px 30px;
+  transition: transform 0.24s ease, box-shadow 0.24s ease,
+    border-color 0.24s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(43, 92, 230, 0.36);
+  box-shadow: var(--shadow-md);
+}
+
+.value-card:nth-child(2) { margin-top: 26px; }
+.value-card:nth-child(3) { margin-top: 52px; }
+
+/* Số thứ tự dạng mono thay cho .card__icon */
+.value-list { counter-reset: value; }
+.value-card { counter-increment: value; }
+
+.value-card::before {
+  content: counter(value, decimal-leading-zero);
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 18px;
+  border-radius: var(--r-sm);
+  background: rgba(43, 92, 230, 0.08);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--cobalt);
+}
+
+.value-card p {
+  color: var(--text-soft);
+  font-size: 0.94rem;
+}
+
+/* ---------- 5. Đội ngũ ---------- */
+.team-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.member {
+  text-align: center;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 28px 18px 26px;
+  transition: transform 0.24s ease, box-shadow 0.24s ease;
+}
+
+.member:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.member img {
+  width: 104px;
+  height: 104px;
+  margin: 0 auto 16px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--white);
+  box-shadow: 0 0 0 2px var(--cobalt), var(--shadow-sm);
+}
+
+.member p {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  color: var(--text-soft);
+}
+
+/* ---------- 6. Form liên hệ: giống .form / .field ---------- */
+.contact-form {
+  max-width: 640px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 32px;
+}
+
+.contact-form p + p { margin-top: 19px; }
+
+/* <br> giữa label và ô nhập không cần vì label đã display:block */
+.contact-form br { display: none; }
+
+.contact-form label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  font-family: inherit;
+  font-size: 0.94rem;
+  color: var(--text);
+  background: var(--paper);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--cobalt);
+  box-shadow: 0 0 0 3px rgba(43, 92, 230, 0.14);
+  background: var(--white);
+}
+
+.contact-form textarea { resize: vertical; min-height: 128px; }
+
+/* Nút giống .btn.btn--primary */
+.contact-form button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border: none;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.93rem;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--cobalt);
+  box-shadow: 0 6px 18px rgba(43, 92, 230, 0.32);
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-2px);
+  background: var(--cobalt-deep);
+  box-shadow: 0 10px 26px rgba(43, 92, 230, 0.42);
+}
+
+/* ---------- 7. Sidebar: thẻ nền tối (.card--ink) ---------- */
+.sidebar {
+  position: sticky;
+  top: calc(var(--header-h) + 28px);
+  background: var(--ink);
+  color: var(--text-on-ink);
+  border-radius: var(--r-md);
+  padding: 28px 26px;
+}
+
+.sidebar h2 {
+  margin-bottom: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--halo);
+}
+
+.recent li { border-bottom: 1px solid var(--line-ink); }
+
+.recent a {
+  display: block;
+  padding: 11px 0;
+  font-size: 0.93rem;
+  font-weight: 600;
+  color: var(--silver);
+  transition: color 0.18s ease, padding-left 0.18s ease;
+}
+
+.recent a:hover {
+  color: var(--halo);
+  padding-left: 6px;
+}
+
+.sidebar p {
+  margin-top: 18px;
+  font-size: 0.89rem;
+}
+
+.sidebar p a { color: var(--halo); font-weight: 700; }
+.sidebar p a:hover { color: var(--white); }
+
+/* ---------- 8. Footer ----------
+   .site-footer (nền, padding, li, a) đã có sẵn; chỉ dựng lưới cột. */
+.footer-cols {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px 34px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  border-bottom: 1px solid var(--line-ink);
+}
+
+.site-footer li { padding: 0; }
+
+/* Giống .site-footer h4 */
+.footer-cols h3 {
+  color: var(--white);
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.footer-cols p { overflow-wrap: anywhere; }
+
+/* Giống .footer-bottom */
+.copyright {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 22px 24px 0;
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+  color: #5b6484;
+}
+.site-footer .copyright { font-size: 0.75rem; }
+.copyright small { font-size: inherit; }
+
+/* ============================================================
+   RESPONSIVE — cùng mốc với responsive.css: 1024 / 768 / 480
+   ============================================================ */
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+    padding: 44px 24px 66px;
+  }
+
+  /* Sidebar xuống dưới main, không còn ghim */
+  .sidebar { position: static; }
+
+  .footer-cols { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  /* Header nhiều nội dung: không ghim để khỏi chiếm màn hình nhỏ */
+  .site-header {
+    position: static;
+    padding: 14px 24px 10px;
+  }
+
+  .main-nav {
+    width: 100%;
+    margin: 10px 0 0;
+  }
+
+  .main-nav ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .main-nav a {
+    padding: 9px 4px;
+    text-align: center;
+    font-size: 0.86rem;
+  }
+
+  main > article,
+  main > section {
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+  }
+
+  .value-list { grid-template-columns: 1fr; }
+  .value-card:nth-child(2),
+  .value-card:nth-child(3) { margin-top: 0; }
+
+  .team-list { grid-template-columns: repeat(2, 1fr); }
+
+  .contact-form { padding: 22px 18px; }
+
+  .footer-cols { gap: 26px; }
+}
+
+@media (max-width: 480px) {
+  .site-header,
+  .layout { padding-left: 17px; padding-right: 17px; }
+
+  .tagline { width: 100%; }
+
+  .main-nav ul { grid-template-columns: repeat(2, 1fr); }
+
+  #gioi-thieu figure { border-radius: var(--r-md); }
+
+  .team-list { grid-template-columns: 1fr; }
+
+  .contact-form button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-cols {
+    grid-template-columns: 1fr;
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  .copyright { padding-left: 17px; padding-right: 17px; }
+}
