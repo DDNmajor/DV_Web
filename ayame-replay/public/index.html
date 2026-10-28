@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ayame Replay — chia sẻ replay Idol Showdown</title>
+  <meta name="description" content="Chia sẻ, tìm và cài replay .ayame của Idol Showdown vào game chỉ với một nút bấm.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="module" src="/js/pages/list.js"></script>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <h1>Replay Idol Showdown, chia sẻ trong một nút bấm</h1>
+        <p>Tìm trận hay của người khác, bấm <b>Cài vào game</b> để file .ayame vào thẳng mục Archive — mở game là xem được ngay, đúng hình ảnh gốc.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-big" href="/upload">＋ Đăng replay của bạn</a>
+      </div>
+    </section>
+
+    <form class="filters" id="filters" role="search">
+      <input class="filter-q" type="search" name="q" placeholder="Tìm tiêu đề, tên người chơi, người đăng…" aria-label="Tìm kiếm">
+      <select name="char" aria-label="Nhân vật"><option value="">Mọi nhân vật</option></select>
+      <select name="stage" aria-label="Stage"><option value="">Mọi stage</option></select>
+      <select name="mode" aria-label="Chế độ">
+        <option value="">Online + Local</option>
+        <option value="onlinePVP">Online</option>
+        <option value="localPVP">Local</option>
+      </select>
+      <select name="version" aria-label="Phiên bản"><option value="">Mọi phiên bản</option></select>
+      <select name="sort" aria-label="Sắp xếp">
+        <option value="new">Mới đăng</option>
+        <option value="played">Mới đấu</option>
+        <option value="views">Xem nhiều</option>
+        <option value="downloads">Tải nhiều</option>
+      </select>
+    </form>
+
+    <p class="muted small" id="result-count" aria-live="polite"></p>
+    <div class="grid" id="grid"></div>
+    <nav class="pager" id="pager" aria-label="Phân trang"></nav>
+  </main>
+</body>
+</html>

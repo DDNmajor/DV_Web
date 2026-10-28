@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cài vào game — Ayame Replay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="module" src="/js/pages/common.js"></script>
+</head>
+<body>
+  <main class="wrap doc">
+    <h1>Cài replay vào game bằng 1 nút bấm</h1>
+    <p>Trình duyệt không được phép tự ghi file vào thư mục của game. <b>Ayame Installer</b> là một script nhỏ cho Windows giúp việc đó: cài <b>một lần</b>, sau đó mỗi lần bấm <b>Cài vào game</b> trên web, replay sẽ tự vào mục Archive của Idol Showdown.</p>
+
+    <div class="panel" style="margin:24px 0">
+      <div class="row">
+        <a class="btn btn-primary btn-big" href="/download/AyameInstaller.zip" data-installer-download>⬇ Tải Ayame Installer (.zip)</a>
+        <span class="muted small">Windows 10/11 · khoảng 10 KB · không cần quyền Administrator</span>
+      </div>
+    </div>
+
+    <h2>Cài đặt (1 phút)</h2>
+    <ol>
+      <li>Mở file <b>AyameInstaller.zip</b> vừa tải, bấm <b>Extract all</b> (Giải nén tất cả) → <b>Extract</b>.</li>
+      <li>Trong thư mục vừa giải nén, bấm đúp <b>setup.cmd</b>.<br>
+        <span class="muted">Nếu Windows hiện "Windows protected your PC", bấm <b>More info</b> → <b>Run anyway</b>. Đây là cảnh báo chung cho mọi file tải từ Internet chưa được ký số.</span></li>
+      <li>Thấy thông báo <b>"Đã cài xong Ayame Installer!"</b> là xong. Có thể xoá thư mục vừa giải nén.</li>
+    </ol>
+
+    <h2>Sử dụng</h2>
+    <ol>
+      <li>Mở một replay trên web, bấm <b>🎮 Cài vào game</b>.</li>
+      <li>Trình duyệt hỏi <b>"Mở Windows PowerShell?"</b> → chọn <b>Mở</b>. Có thể tick <b>Luôn cho phép</b> để lần sau khỏi hỏi.</li>
+      <li>Vài giây sau hiện thông báo <b>"Đã cài replay vào game"</b>. Mở Idol Showdown → <b>Archive</b> để xem.</li>
+    </ol>
+    <div class="notice">
+      <div>
+        <p><b>Lưu ý phiên bản:</b> game chỉ mở được replay ghi ở <b>đúng phiên bản</b> game bạn đang chơi. Replay của bản cũ hơn sẽ hiện là "corrupted" trong Archive. Mỗi replay trên web đều ghi rõ phiên bản.</p>
+      </div>
+    </div>
+
+    <h2>Trình cài làm gì trên máy bạn?</h2>
+    <ul>
+      <li>Chép script <code>ayame-handler.ps1</code> và <code>config.json</code> (địa chỉ web này) vào <code>%LOCALAPPDATA%\AyameInstaller</code>.</li>
+      <li>Đăng ký đường link <code>ayame://</code> cho tài khoản Windows của bạn (<code>HKEY_CURRENT_USER\Software\Classes\ayame</code>).</li>
+      <li>Tạo lối tắt <b>"Idol Showdown - Replay Archive"</b> trong Start Menu để mở nhanh thư mục replay.</li>
+    </ul>
+    <p>Khi bạn bấm <b>Cài vào game</b>, script chỉ tải file từ địa chỉ ghi trong <code>config.json</code>, kiểm tra đúng là file replay và khớp mã SHA-256 của server, rồi ghi vào thư mục Archive. Nó <b>không ghi đè</b> file có sẵn và không làm gì khác. Toàn bộ mã nguồn nằm trong file <code>ayame-handler.ps1</code> — mở bằng Notepad để xem.</p>
+
+    <h2>Gỡ cài đặt</h2>
+    <p>Bấm <b>Windows + R</b>, dán <code>%LOCALAPPDATA%\AyameInstaller\uninstall.cmd</code> rồi Enter. Replay đã cài vẫn còn nguyên trong game.</p>
+
+    <h2>Không muốn cài gì?</h2>
+    <p>Trên trang replay, bấm <b>⬇ Tải .ayame</b>, rồi chép file vào thư mục:</p>
+    <div class="path-row"><span class="path" data-archive-path></span><button class="btn btn-small" type="button" data-copy-archive>Copy</button></div>
+    <p class="muted small" style="margin-top:8px">Mẹo: bấm Windows + R, dán đường dẫn trên rồi Enter để mở thẳng thư mục đó.</p>
+  </main>
+</body>
+</html>

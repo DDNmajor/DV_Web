@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Đăng replay — Ayame Replay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="module" src="/js/pages/upload.js"></script>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero" style="grid-template-columns:1fr">
+      <div>
+        <h1>Đăng replay</h1>
+        <p>Không cần biết file nằm ở đâu — chọn thư mục replay của game, web sẽ tự tìm và hiện danh sách trận để bạn tick chọn. File chưa được gửi đi cho tới khi bạn bấm <b>Đăng</b>.</p>
+      </div>
+    </section>
+
+    <div class="notice notice-info hidden" id="login-notice" style="margin-bottom:16px">
+      <div>
+        <p>Bạn có thể chọn và xem trước replay ngay, nhưng cần <a id="login-link" href="/login?next=/upload">đăng nhập</a> hoặc <a id="register-link" href="/register?next=/upload">tạo tài khoản</a> để đăng lên web.</p>
+      </div>
+    </div>
+
+    <div class="methods">
+      <section class="panel method-main">
+        <h2>Cách 1 · Chọn thư mục replay của bạn</h2>
+        <ol class="step-list">
+          <li>
+            <div>
+              Bấm <b>Copy đường dẫn</b>:
+              <div class="path-row" style="margin-top:6px">
+                <span class="path" id="archive-path"></span>
+                <button class="btn btn-small" type="button" id="copy-path">Copy đường dẫn</button>
+              </div>
+            </div>
+          </li>
+          <li><div>Bấm nút <b>Chọn thư mục replay</b> bên dưới. Trong hộp thoại hiện ra, bấm vào <b>thanh địa chỉ</b> ở trên cùng, dán (<b>Ctrl + V</b>) rồi nhấn <b>Enter</b>.</div></li>
+          <li><div>Bấm <b>Select Folder</b> (Chọn thư mục). Nếu trình duyệt hỏi có cho xem file không, chọn <b>Xem file</b> / <b>View files</b>.</div></li>
+        </ol>
+
+        <figure class="mock-dialog" aria-label="Minh hoạ hộp thoại chọn thư mục">
+          <div class="mock-titlebar"><span>📁 Select Folder</span><span>✕</span></div>
+          <div class="mock-address"><span class="pointer">2 · dán vào đây</span><span class="field">%USERPROFILE%\AppData\LocalLow\BestoGameStudios\Idol Showdown\Archive</span></div>
+          <div class="mock-body">📄 0c84R_P1_KINGWORLD_Ayame_VS_Koyori_.ayame …</div>
+          <div class="mock-footer"><span class="primary">3 · Select Folder</span><span>Cancel</span></div>
+        </figure>
+
+        <div class="row" style="margin-top:18px">
+          <button class="btn btn-primary btn-big" type="button" id="pick-folder">📂 Chọn thư mục replay</button>
+          <button class="btn hidden" type="button" id="reuse-folder">↻ Dùng lại thư mục lần trước</button>
+        </div>
+        <p class="muted small" style="margin:10px 0 0">Không chọn được? <button class="btn-link" type="button" id="pick-folder-alt" style="text-decoration:underline">Thử cách chọn thư mục khác</button>.</p>
+        <input type="file" id="folder-input" webkitdirectory multiple hidden>
+      </section>
+
+      <div class="method-side">
+        <section class="panel">
+          <h2>Cách 2 · Mở sẵn thư mục</h2>
+          <p class="muted">Đã cài <a href="/install">Ayame Installer</a>? Bấm nút dưới, thư mục replay sẽ tự mở — kéo file từ đó thả vào ô bên dưới.</p>
+          <button class="btn btn-blue" type="button" id="open-archive">🗂 Mở thư mục replay trên máy</button>
+        </section>
+
+        <section class="panel">
+          <h2>Cách 3 · Kéo thả</h2>
+          <div class="dropzone" id="dropzone">
+            <p style="margin:0 0 10px">Thả file <b>.ayame</b> hoặc cả thư mục vào đây</p>
+            <button class="btn btn-small" type="button" id="pick-files">Chọn file…</button>
+            <input type="file" id="file-input" accept=".ayame" multiple hidden>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <section id="results" class="hidden" style="margin-top:28px">
+      <h2 id="results-title">Replay tìm thấy</h2>
+      <p class="muted" id="scan-status" aria-live="polite"></p>
+      <div class="local-toolbar">
+        <input type="search" id="local-search" placeholder="Tìm nhân vật, tên người chơi…" aria-label="Tìm trong danh sách">
+        <select id="local-mode" aria-label="Lọc chế độ">
+          <option value="">Online + Local</option>
+          <option value="onlinePVP">Online</option>
+          <option value="localPVP">Local</option>
+        </select>
+        <label class="row" style="margin:0;font-weight:500;gap:6px"><input type="checkbox" id="hide-posted" checked> Ẩn trận đã đăng</label>
+        <span class="spacer"></span>
+        <button class="btn btn-small" type="button" id="select-newest">Chọn 5 trận mới nhất</button>
+        <button class="btn btn-small" type="button" id="select-all">Chọn tất cả đang hiện</button>
+        <button class="btn btn-small" type="button" id="select-none">Bỏ chọn</button>
+      </div>
+      <div class="local-list" id="local-list"></div>
+
+      <div class="upload-bar">
+        <div style="flex:1;min-width:200px">
+          <b id="selected-count">Chưa chọn trận nào</b>
+          <div class="progress hidden" id="overall-progress" style="margin-top:6px"><i></i></div>
+        </div>
+        <button class="btn btn-primary" type="button" id="upload-btn" disabled>Đăng lên web</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

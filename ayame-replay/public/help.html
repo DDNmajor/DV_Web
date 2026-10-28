@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trợ giúp — Ayame Replay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="module" src="/js/pages/common.js"></script>
+</head>
+<body>
+  <main class="wrap doc">
+    <h1>Trợ giúp</h1>
+
+    <details class="faq" id="vi-tri" open>
+      <summary>File replay (.ayame) nằm ở đâu trên máy tôi?</summary>
+      <p>Game lưu replay vào thư mục:</p>
+      <div class="path-row"><span class="path" data-archive-path></span><button class="btn btn-small" type="button" data-copy-archive>Copy</button></div>
+      <p style="margin-top:10px">Thư mục <code>AppData</code> bị Windows ẩn nên bạn thường không thấy nó khi duyệt bình thường. Cách mở nhanh: bấm <b>Windows + R</b>, dán đường dẫn trên rồi nhấn Enter.</p>
+      <p>Bạn không cần tự tìm file khi đăng: ở trang <a href="/upload">Đăng replay</a>, bấm <b>Chọn thư mục replay</b>, dán đường dẫn này vào thanh địa chỉ của hộp thoại là web sẽ tự liệt kê mọi trận.</p>
+    </details>
+
+    <details class="faq" id="luu-replay">
+      <summary>Làm sao để game tự lưu replay?</summary>
+      <ul>
+        <li><b>Tự động:</b> vào <b>Settings</b> trong game, bật <b>Auto Save VOD</b>. Mọi trận sau đó đều được lưu.</li>
+        <li><b>Từng trận:</b> ở màn hình kết quả sau trận, bấm <b>Save VOD</b>.</li>
+      </ul>
+      <p>Game chỉ ghi replay cho trận <b>đối kháng</b>: Online và Local (2 người chơi). Trận với máy, Training hay Arcade không có replay.</p>
+    </details>
+
+    <details class="faq" id="corrupted">
+      <summary>Vì sao game báo replay "corrupted" (hỏng)?</summary>
+      <p>Hầu như luôn là do <b>khác phiên bản</b>: game chỉ mở được replay ghi ở đúng phiên bản bạn đang chơi. Khi game cập nhật, replay của bản cũ sẽ không xem được nữa. Mỗi replay trên web đều có nhãn phiên bản (ví dụ <span class="badge badge-version">v6.0.2</span>); nhãn màu cam <span class="badge badge-old">· cũ</span> nghĩa là đã có bản mới hơn.</p>
+    </details>
+
+    <details class="faq">
+      <summary>Bấm "Cài vào game" mà không có gì xảy ra?</summary>
+      <ul>
+        <li>Bạn cần <a href="/install">cài Ayame Installer</a> một lần trước (chỉ dành cho Windows).</li>
+        <li>Trình duyệt có thể hiện hộp hỏi nhỏ ở trên cùng: <b>"Mở Windows PowerShell?"</b> — hãy chọn <b>Mở</b>.</li>
+        <li>Nếu vẫn không được, bấm <b>Tải .ayame</b> và chép file vào thư mục replay bằng tay (xem câu đầu tiên).</li>
+      </ul>
+    </details>
+
+    <details class="faq">
+      <summary>Không chọn được thư mục ở trang Đăng replay?</summary>
+      <ul>
+        <li>Một số trình duyệt không cho mở thư mục trong <code>AppData</code>. Khi đó bấm <b>Thử cách chọn thư mục khác</b> ngay dưới nút, hoặc</li>
+        <li>Mở thư mục replay (Windows + R, dán đường dẫn) rồi <b>kéo thả</b> file hoặc cả thư mục vào trang Đăng replay.</li>
+        <li>Đã cài Ayame Installer thì có thể bấm <b>Mở thư mục replay trên máy</b>.</li>
+      </ul>
+    </details>
+
+    <details class="faq">
+      <summary>Web có xem được replay ngay trên trình duyệt không?</summary>
+      <p>Không. File .ayame chỉ chứa các nút bấm của hai người chơi theo từng frame; hình ảnh do chính game dựng lại khi phát. Vì vậy web chỉ hiển thị thông tin trận (nhân vật, tỉ số, diễn biến máu từng round…), còn để xem trận, bạn cài replay vào game. Bạn thấy đúng hình ảnh gốc, và web không phải chứa bất kỳ dữ liệu nào của game.</p>
+    </details>
+
+    <details class="faq">
+      <summary>Đăng replay có lộ thông tin gì của tôi không?</summary>
+      <p>Replay chứa tên hiển thị Steam của hai người chơi (với trận Online), nhân vật, thời điểm đấu và các nút bấm trong trận. Không có thông tin đăng nhập hay dữ liệu nào khác. Bạn có thể xoá replay mình đã đăng bất cứ lúc nào trong trang replay.</p>
+    </details>
+  </main>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "ayame-replay",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Web chia sẻ replay .ayame của Idol Showdown, kèm trình cài replay vào game bằng 1 nút bấm",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node server/server.js",
+    "selftest": "node server/selftest.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

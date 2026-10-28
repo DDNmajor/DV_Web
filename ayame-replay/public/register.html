@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Đăng ký — Ayame Replay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="module" src="/js/pages/auth.js"></script>
+</head>
+<body>
+  <main class="wrap">
+    <section class="panel auth-box">
+      <h1>Tạo tài khoản</h1>
+      <p class="muted">Tài khoản dùng để đăng replay và quản lý replay của bạn. Xem và tải replay thì không cần tài khoản.</p>
+      <form id="auth-form" data-mode="register" novalidate>
+        <div>
+          <label for="username">Tên đăng nhập</label>
+          <input type="text" id="username" name="username" autocomplete="username" minlength="3" maxlength="24" required>
+          <p class="muted small" style="margin:4px 0 0">3–24 ký tự: chữ, số, dấu _ . - (nên trùng tên trong game cho dễ nhận ra).</p>
+        </div>
+        <div>
+          <label for="password">Mật khẩu</label>
+          <input type="password" id="password" name="password" autocomplete="new-password" minlength="8" required>
+        </div>
+        <div>
+          <label for="password2">Nhập lại mật khẩu</label>
+          <input type="password" id="password2" name="password2" autocomplete="new-password" minlength="8" required>
+        </div>
+        <p class="form-error" id="form-error" role="alert"></p>
+        <button class="btn btn-primary" type="submit">Tạo tài khoản</button>
+        <p class="muted" style="margin:0">Đã có tài khoản? <a id="switch-link" href="/login">Đăng nhập</a></p>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

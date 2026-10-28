@@ -146,3 +146,7 @@ Chờ 1–2 phút là trang lên.
 Đây là trang fan-made phi lợi nhuận phục vụ học tập, không có liên kết chính thức
 với COVER Corp. hay hololive production. Mọi hình ảnh, tên gọi và nhân vật thuộc
 bản quyền của chủ sở hữu tương ứng.
+
+## 8. Dự án kèm theo: Ayame Replay
+
+Thư mục [`ayame-replay/`](ayame-replay/) là một web **có backend** (Node.js + Express + SQLite) để chia sẻ replay `.ayame` của game Idol Showdown, kèm trình cài đưa replay vào game bằng một nút bấm. Phần này cần chạy server (`npm start`) nên **không** chạy được trên GitHub Pages — xem [ayame-replay/README.md](ayame-replay/README.md).
